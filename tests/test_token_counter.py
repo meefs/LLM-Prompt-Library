@@ -3,7 +3,6 @@ from pytest import approx
 
 from scripts.token_counter import TokenCounter
 
-
 def test_extract_content_strip_markdown():
     text = "# Title\nSome *bold* text\n- item"
     tc = TokenCounter(include_markdown=False)
