@@ -1,5 +1,5 @@
 from pathlib import Path
-from scripts import build_index
+from llm_prompt_library import build_index
 
 extract_title = build_index.extract_title
 
