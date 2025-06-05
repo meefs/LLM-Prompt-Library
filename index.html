@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; script-src 'self' https://cdn.tailwindcss.com; connect-src 'self';" />
   <title>LLM Prompt Library</title>
 
   <!-- JetBrains Mono + Tailwind CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com/3.3.5" integrity="sha384-A5WIKUp80Xc6OpWaTRmNdO1wW+0yzwpsLpUZX5B3rMB7Exbz6uBpUo4fgtfjwyad" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root[data-theme="dark"]  {--bg:#0d1117;--fg:#c9d1d9;--accent:#00ff88;--card:#161b22;--card-hover:#1f252d}
@@ -39,10 +38,10 @@
             <!-- label filled by JS -->
           </button>
 
-          <a href="https://github.com/abilzerian/LLM-Prompt-Library" class="hover:text-emerald-400" aria-label="GitHub" rel="noopener noreferrer" referrerpolicy="no-referrer">
+          <a href="https://github.com/abilzerian/LLM-Prompt-Library" class="hover:text-emerald-400" aria-label="GitHub">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.9c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8 1.9 3 2.5v-2.2c-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2.9-.2 1.8-.4 2.7-.4s1.8.1 2.7.4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.7.9 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7v2.2c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
           </a>
-          <a href="https://twitter.com/alexbilz" class="hover:text-emerald-400" aria-label="Twitter" rel="noopener noreferrer" referrerpolicy="no-referrer">
+          <a href="https://twitter.com/alexbilz" class="hover:text-emerald-400" aria-label="Twitter">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.4 4.6c-.8.4-1.6.6-2.5.8.9-.6 1.6-1.5 1.9-2.6-.9.6-1.9 1-3 1.2C18.9 2.8 17.6 2 16 2c-2.9 0-5 2.7-4.3 5.5-4-.2-7.6-2.1-9.9-5C1 4.5 1.6 7 3.5 8.3c-.7 0-1.3-.2-1.9-.5 0 2.2 1.6 4.1 3.8 4.5-.7.2-1.5.3-2.2.1.6 1.9 2.4 3.3 4.6 3.4-1.6 1.3-3.7 2-5.8 1.7C4.6 19 7.2 20 10 20c6 0 9.5-5.2 9.3-9.8.6-.4 1.2-1 1.6-1.6-.6.3-1.3.5-2 .6.7-.4 1.2-1 1.5-1.6z"/></svg>
           </a>
         </div>
@@ -73,23 +72,84 @@
       <a href="prompts/INDEX.md" class="inline-block px-4 py-2 text-emerald-400 border border-emerald-400 rounded hover:bg-emerald-400/10 text-xs tracking-wide">cat prompts/INDEX.md</a>
     </section>
 
-    <!-- FINANCE -->
-    <section id="finance"><h2 class="section-heading">Finance</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul></section>
+    <!-- FINANCE (2) -->
+    <section id="finance"><h2 class="section-heading">Finance</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <li><a href="prompts/finance/10-KAnalyzer.md"      class="prompt-link block p-4 rounded">10-K Analyzer</a></li>
+      <li><a href="prompts/finance/venturecapitalist.md" class="prompt-link block p-4 rounded">Venture Capitalist</a></li>
+    </ul></section>
 
-    <!-- MEDICAL -->
-    <section id="medical"><h2 class="section-heading">Medical</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul></section>
+    <!-- MEDICAL (3) -->
+    <section id="medical"><h2 class="section-heading">Medical</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Personalized-Medicine/refs/heads/main/prompt.md"                                      class="prompt-link block p-4 rounded">Medical-Bot</a></li>
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Prompt-Library/refs/heads/main/prompts/medical/psychologist"                                     class="prompt-link block p-4 rounded">Psychologist</a></li>
+      <li><a href="prompts/medical/Cognitive%20Bias%20Assessment%20Tool.md"          class="prompt-link block p-4 rounded">Cognitive Bias Assessment Tool</a></li>
+    </ul></section>
 
-    <!-- MISCELLANEOUS -->
-    <section id="miscellaneous"><h2 class="section-heading">Miscellaneous</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul></section>
+    <!-- MISCELLANEOUS (8) -->
+    <section id="miscellaneous"><h2 class="section-heading">Miscellaneous</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <li><a href="prompts/miscellaneous/ChatAGI.md"               class="prompt-link block p-4 rounded">Chat AGI</a></li>
+      <li><a href="prompts/miscellaneous/Code%20Anything%20Now.md" class="prompt-link block p-4 rounded">Code Anything Now</a></li>
+      <li><a href="prompts/miscellaneous/Custom%20Instructions.md" class="prompt-link block p-4 rounded">Custom Instructions</a></li>
+      <li><a href="prompts/miscellaneous/MultiverseGPT.md"         class="prompt-link block p-4 rounded">Multiverse GPT</a></li>
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Prompt-Library/refs/heads/main/prompts/miscellaneous/antikythera"              class="prompt-link block p-4 rounded">Antikythera</a></li>
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Prompt-Library/refs/heads/main/prompts/miscellaneous/bitmap"                   class="prompt-link block p-4 rounded">Bitmap</a></li>
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Prompt-Library/refs/heads/main/prompts/miscellaneous/graphing"                 class="prompt-link block p-4 rounded">Graphing</a></li>
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Prompt-Library/refs/heads/main/prompts/miscellaneous/textadventure"            class="prompt-link block p-4 rounded">TextAdventure</a></li>
+    </ul></section>
 
-    <!-- PROGRAMMING -->
-    <section id="programming"><h2 class="section-heading">Programming</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul></section>
+    <!-- PROGRAMMING (15) -->
+    <section id="programming"><h2 class="section-heading">Programming</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <li><a href="prompts/programming/AWS%20Architect.md"                 class="prompt-link block p-4 rounded">AWS Architect</a></li>
+      <li><a href="prompts/programming/Code_Explainer.md"                  class="prompt-link block p-4 rounded">Code Explainer</a></li>
+      <li><a href="prompts/programming/Copilot.md"                         class="prompt-link block p-4 rounded">Copilot</a></li>
+      <li><a href="prompts/programming/Data_Conversion_Specialist.md"      class="prompt-link block p-4 rounded">Data Conversion Specialist</a></li>
+      <li><a href="prompts/programming/ExcelFormulas.md"                   class="prompt-link block p-4 rounded">Excel Formulas</a></li>
+      <li><a href="prompts/programming/HTML.md"                            class="prompt-link block p-4 rounded">HTML</a></li>
+      <li><a href="prompts/programming/LaTeX_specialist.md"                class="prompt-link block p-4 rounded">LaTeX Specialist</a></li>
+      <li><a href="prompts/programming/OnePageWebsite.md"                  class="prompt-link block p-4 rounded">One-Page Website</a></li>
+      <li><a href="prompts/programming/Python.md"                          class="prompt-link block p-4 rounded">Python</a></li>
+      <li><a href="prompts/programming/PythonBugFixer.md"                  class="prompt-link block p-4 rounded">Python Bug Fixer</a></li>
+      <li><a href="prompts/programming/Scientific%20Data%20Visualizer.md"  class="prompt-link block p-4 rounded">Scientific Data Visualizer</a></li>
+      <li><a href="prompts/programming/UnstructuredText_to_JSON.md"        class="prompt-link block p-4 rounded">Unstructured Text → JSON</a></li>
+      <li><a href="prompts/programming/Wolfram.md"                         class="prompt-link block p-4 rounded">Wolfram</a></li>
+      <li><a href="prompts/programming/commit%20messages.md"               class="prompt-link block p-4 rounded">Commit Messages</a></li>
+      <li><a href="prompts/programming/cursor_IDE_prompt.md"               class="prompt-link block p-4 rounded">Cursor IDE Prompt</a></li>
+    </ul></section>
 
-    <!-- PROMPT GENERATION -->
-    <section id="prompt-generation"><h2 class="section-heading">Prompt Generation</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul></section>
+    <!-- PROMPT GENERATION (7) -->
+    <section id="prompt-generation"><h2 class="section-heading">Prompt Generation</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <li><a href="prompts/prompt_generation/CoT_Probe_o3.md"         class="prompt-link block p-4 rounded">CoT Probe (o3)</a></li>
+      <li><a href="prompts/prompt_generation/DALL-E.md"               class="prompt-link block p-4 rounded">DALL-E</a></li>
+      <li><a href="prompts/prompt_generation/Midjourney.md"           class="prompt-link block p-4 rounded">Midjourney</a></li>
+      <li><a href="prompts/prompt_generation/Prompt%20Creator.md"     class="prompt-link block p-4 rounded">Prompt Creator</a></li>
+      <li><a href="prompts/prompt_generation/PromptScript.md"         class="prompt-link block p-4 rounded">Prompt Script</a></li>
+      <li><a href="prompts/prompt_generation/PromptScriptEngineer.md" class="prompt-link block p-4 rounded">Prompt Script Engineer</a></li>
+      <li><a href="prompts/prompt_generation/ScriptingTemplate.md"    class="prompt-link block p-4 rounded">Scripting Template</a></li>
+    </ul></section>
 
-    <!-- WRITING & EDITING -->
-    <section id="writing-editing"><h2 class="section-heading">Writing & Editing</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul></section>
+    <!-- WRITING & EDITING (15) -->
+    <section id="writing-editing"><h2 class="section-heading">Writing & Editing</h2><ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <!-- editing_revision -->
+      <li><a href="prompts/writing_editing/editing_revision/Preserve%20Technical%20Terminology.md" class="prompt-link block p-4 rounded">Preserve Technical Terminology</a></li>
+      <li><a href="prompts/writing_editing/editing_revision/Proofread.md"                            class="prompt-link block p-4 rounded">Proofread</a></li>
+      <li><a href="prompts/writing_editing/editing_revision/Rewrite.md"                              class="prompt-link block p-4 rounded">Rewrite</a></li>
+      <li><a href="prompts/writing_editing/editing_revision/formatting.md"                           class="prompt-link block p-4 rounded">Formatting Tips</a></li>
+      <!-- educational -->
+      <li><a href="prompts/writing_editing/educational/Teach.md"                                     class="prompt-link block p-4 rounded">Teach</a></li>
+      <li><a href="prompts/writing_editing/educational/Thought%20Stream%20Transcription.md"          class="prompt-link block p-4 rounded">Thought Stream Transcription</a></li>
+      <!-- extraction_summarization -->
+      <li><a href="prompts/writing_editing/extraction_summarization/Action%20Items.md"               class="prompt-link block p-4 rounded">Action Items</a></li>
+      <li><a href="prompts/writing_editing/extraction_summarization/Book%20Summary.md"               class="prompt-link block p-4 rounded">Book Summary</a></li>
+      <li><a href="prompts/writing_editing/extraction_summarization/Comprehensive%20Analysis.md"     class="prompt-link block p-4 rounded">Comprehensive Analysis</a></li>
+      <li><a href="prompts/writing_editing/extraction_summarization/Non-Fiction%20Analysis.md"       class="prompt-link block p-4 rounded">Non-Fiction Analysis</a></li>
+      <li><a href="prompts/writing_editing/extraction_summarization/NotesGPT.md"                     class="prompt-link block p-4 rounded">Notes GPT</a></li>
+      <li><a href="prompts/writing_editing/extraction_summarization/Poem%20Analysis.md"              class="prompt-link block p-4 rounded">Poem Analysis</a></li>
+      <li><a href="prompts/writing_editing/extraction_summarization/Short%20Summary.md"              class="prompt-link block p-4 rounded">Short Summary</a></li>
+      <!-- verification -->
+      <li><a href="prompts/writing_editing/verification/Accuracy%20Confirmation.md"                  class="prompt-link block p-4 rounded">Accuracy Confirmation</a></li>
+      <!-- style emulation -->
+      <li><a href="https://raw.githubusercontent.com/abilzerian/LLM-Prompt-Library/refs/heads/main/prompts/writing_editing/style_emulation/hemingway"                                class="prompt-link block p-4 rounded">Hemingway Style</a></li>
+    </ul></section>
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -117,25 +177,11 @@
       toggle.textContent = root.getAttribute('data-theme') === 'dark' ? '☀︎ day' : '☾ night';
     }
 
-    /* ---------- prompt loading + search ---------- */
-    const search = document.getElementById('search');
-    const CATEGORY_MAP = {
-      writing_editing: 'writing-editing',
-      programming: 'programming',
-      prompt_generation: 'prompt-generation',
-      medical: 'medical',
-      finance: 'finance',
-      miscellaneous: 'miscellaneous',
-    };
+    /* ---------- live search ---------- */
+    const search   = document.getElementById('search');
+    const sections = [...document.querySelectorAll('main section')].filter(s => s.id);
 
-    let sections = [];
-
-    function initSearch() {
-      sections = [...document.querySelectorAll('main section')].filter(s => s.id);
-      search.addEventListener('input', onSearch);
-    }
-
-    function onSearch(e) {
+    search.addEventListener('input', e => {
       const term = e.target.value.toLowerCase();
       sections.forEach(sec => {
         let match = false;
@@ -146,36 +192,7 @@
         });
         sec.style.display = match ? '' : 'none';
       });
-    }
-
-    function populatePrompts() {
-      fetch('prompts/INDEX.md')
-        .then(res => res.text())
-        .then(text => {
-          const lines = text.split('\n').filter(l => l.startsWith('| ['));
-          lines.forEach(line => {
-            const m = line.match(/\| \[(.+?)\]\(.+?\) \| (.+?) \|/);
-            if (!m) return;
-            const path = m[1];
-            const title = m[2];
-            const cat = path.split('/')[0];
-            const id = CATEGORY_MAP[cat];
-            const ul = document.querySelector(`#${id} ul`);
-            if (!ul) return;
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = `prompts/${encodeURI(path)}`;
-            a.textContent = title;
-            a.className = 'prompt-link block p-4 rounded';
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-          initSearch();
-        })
-        .catch(console.error);
-    }
-
-    document.addEventListener('DOMContentLoaded', populatePrompts);
+    });
   </script>
 </body>
 </html>
