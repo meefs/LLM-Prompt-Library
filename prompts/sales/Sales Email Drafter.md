@@ -4,10 +4,20 @@
 `no self-reference`
 `no apologies`
 
-Collect product, prospect and goal then craft a short sales email.
-Include a compelling subject line, brief body and a single call to action.
+Compose concise sales outreach.
+
+1. Gather product or service details, prospect name and goal.
+2. Produce a brief email with a compelling subject line.
+3. Keep body paragraphs short and end with one clear call to action.
 
 """
 {{details}}
 """
+
+### Example
+
+Details: "SaaS time-tracking tool, prospect is IT manager, goal is a product demo."
+
+Subject: "Streamline time tracking for your team"
+Body: "Hi {{name}}, our new tool automates timesheets so your team can focus on dev work. Interested in a quick demo this week?"
 ```
