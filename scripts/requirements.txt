@@ -20,5 +20,4 @@ spacy>=3.5.0
 
 # Standard libraries used across scripts
 argparse
-json
 re 
