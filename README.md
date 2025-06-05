@@ -59,7 +59,7 @@ pip install -r scripts/requirements.txt
 # rebuild catalogue & README counts (CI & pre‑commit do this automatically)
 python scripts/build_index.py
 ```
-Need a demo or enterprise implementation? Contact <a href="https://x.com/alexbilz">Alex Bilzerian</a></sub>
+<sub>Need a demo or enterprise implementation? Contact <a href="https://x.com/alexbilz">Alex Bilzerian</a></sub>
 
 ⸻
 
