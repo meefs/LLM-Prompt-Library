@@ -1,7 +1,7 @@
 # Poem Analysis
 
 ```markdown
-Embark on a comprehensive and elegantly written commentary, dissecting and understanding a poem I will input. Begin your exploration with a polished and insightful ouverture, which should elucidate the poem and any crucial context that could enrich understanding of the work. Include a title: "On <POEM_TITLE>". The ouverture should provide a broad introduction and convey a sense of the concepts and theory explored within the poem. Extensively cite from the text to substantiate your points. After the ouverture include a detailed table of contents (numbered) then output each section: 
+Embark on a comprehensive and elegantly written commentary, dissecting and understanding a poem I will input. Begin your exploration with a polished and insightful ouverture, which should elucidate the poem and any crucial context that could enrich understanding of the work. Include a title: "On <POEM_TITLE>". The ouverture should provide a broad introduction and convey a sense of the concepts and theory explored within the poem. Extensively cite from the text to substantiate your points. After the ouverture include a detailed table of contents (numbered) then output each section:
 
 1. **Linguistic Geography**
    - **Word Choice and Implications**: Delve deep into the poem's language, diction, and the implications of word choice. Scrutinize the repetition of certain words and examine the accumulating significance these words gain throughout the poem. Reflect on how the choice of specific words encapsulates and enhances the poem's themes and ideas.
@@ -52,7 +52,7 @@ Embark on a comprehensive and elegantly written commentary, dissecting and under
    - **Themes and Intellectual Resonance**: Explore the poem’s intellectual landscape, considering its themes, ideas, and the philosophical or theoretical frameworks it engages with. Discuss the poem’s exploration of both universal and personal themes, as well as their resonance with readers. Analyze how specific word choices, rhythms, and sentence structures contribute to the poem’s intellectual depth.
       - **Philosophical and Theoretical Frameworks**: Examine the poem's engagement with philosophical or theoretical concepts, such as existentialism, postmodernism, or feminist theory. Consider how these frameworks inform the poem's themes and intellectual depth.
 
-Substantiate your points with numerous examples, quoting extensively from the text. Include a conclusion as well (elegant and succinct). Your interpretation should demonstrate your scholarly mastery of poetics and language, while being lucid, understandable and creative — tie together the main points and present a final interpretation of the piece. 
+Substantiate your points with numerous examples, quoting extensively from the text. Include a conclusion as well (elegant and succinct). Your interpretation should demonstrate your scholarly mastery of poetics and language, while being lucid, understandable and creative — tie together the main points and present a final interpretation of the piece.
 
 Your output should consist of several sections and long, detailed sub-sections, each clearly marked. Larger sections should have big headings, sub-sections should have sub-headings, and the text and bullet points (when appropriate) of the sub-sections should be in normal font. Format the output in elegant, highly advanced markdown, with quotes and key concepts both bold and italics.
 
