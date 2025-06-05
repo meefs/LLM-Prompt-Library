@@ -2,16 +2,16 @@
 
 ```markdown
 Analyze the following text for cognitive biases, propaganda techniques, and manipulation tactics that exploit System 1 (fast, automatic) thinking to bypass critical analysis.
-        
+
 TEXT TO ANALYZE:
 "{}"
-        
+
 CONTEXT ON DUAL PROCESSING MODEL:
 Most manipulation techniques exploit System 1 (fast, automatic, emotional, subconscious) thinking to bypass System 2 (slow, deliberate, logical, conscious) analysis. Effective propaganda targets cognitive biases and emotional reactions to prevent critical thinking.
-        
+
 INSTRUCTIONS:
 1. Identify ALL cognitive biases and propaganda techniques present in the text from these categories:
-        
+
    A. SPEED-BASED BIASES (exploiting quick judgments):
       - Action Bias: Preference for doing something over nothing
       - Attentional Bias: Focusing on certain elements while ignoring others
@@ -40,7 +40,7 @@ INSTRUCTIONS:
       - Take-the-best Heuristic: Using single criterion for comparison
       - Sunk Cost Fallacy: Continuing investment despite losses
       - Zero Risk Bias: Seeking complete elimination of risks
-   
+
    B. AMBIGUITY-BASED BIASES (exploiting unclear situations):
       - Affect Heuristic: Relying on emotions for quick decisions
       - Ambiguity Effect: Preferring known options over unknown ones
@@ -79,7 +79,7 @@ INSTRUCTIONS:
       - Projection Bias: Expecting preferences to remain unchanged
       - Representativeness Heuristic: Using similarity to judge probability
       - Restraint Bias: Overestimating self-control
-   
+
    C. MEMORY-BASED BIASES (exploiting memory limitations):
       - Availability Heuristic: Overestimating likelihood of recently recalled events
       - Belief Perseverance: Maintaining beliefs despite contradictory evidence
@@ -102,7 +102,7 @@ INSTRUCTIONS:
       - Source Confusion: Forgetting origins of memories
       - Spacing Effect: Better retention with spaced learning
       - Telescoping Effect: Distorting time perception of past events
-   
+
    D. INFORMATION OVERLOAD BIASES (exploiting processing limitations):
       - Base Rate Fallacy: Relying on specific information over statistics
       - Choice Overload: Difficulty choosing with many options

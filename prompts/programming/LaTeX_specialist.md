@@ -64,5 +64,5 @@ Additional LaTeX Best Practices:
    - Place a non-breaking space (`~`) between a citation and the preceding word to avoid awkward line breaks.
    - Use `microtype` for enhanced text justification and character protrusion.
 
-Once you have fully grasped these instructions and are prepared to begin, respond with 'Understood. Please input the LaTeX you would like to fix or what you would like converted to LaTeX.' 
+Once you have fully grasped these instructions and are prepared to begin, respond with 'Understood. Please input the LaTeX you would like to fix or what you would like converted to LaTeX.'
 ```

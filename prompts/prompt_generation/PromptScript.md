@@ -26,7 +26,7 @@ Symbols and Conventions:
 
 8. [[ ]]: Indicate a loop or repetition using double brackets.
    Example: [[suggest](gifts){age: 30, interests: "technology, photography"}]]*
-   
+
    1. Research and summarize an article on AI ethics in a paragraph format, then suggest books on the same topic:
    [research]{topic: "AI ethics"}->[[summarize]<paragraph> | [suggest](books)[topic]]
 
