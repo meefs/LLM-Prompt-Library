@@ -3,18 +3,18 @@
 
 | Path | Title |
 |------|-------|
-| [creative_writing/Dialogue Generator.md](creative_writing/Dialogue%20Generator.md) | Dialogue Generator |
+| [creative_writing/Dialogue_Generator.md](creative_writing/Dialogue_Generator.md) | Dialogue Generator |
 | [creative_writing/Storyteller.md](creative_writing/Storyteller.md) | Storyteller |
 | [finance/10-KAnalyzer.md](finance/10-KAnalyzer.md) | 10-K Analyzer |
 | [finance/venturecapitalist.md](finance/venturecapitalist.md) | Act as a venture capitalist |
-| [healthcare/Symptom Checker.md](healthcare/Symptom%20Checker.md) | Symptom Checker |
-| [legal/Case Law Finder.md](legal/Case%20Law%20Finder.md) | Case Law Finder |
-| [legal/Legal Contract Reviewer.md](legal/Legal%20Contract%20Reviewer.md) | Legal Contract Reviewer |
-| [marketing/Ad Copy Generator.md](marketing/Ad%20Copy%20Generator.md) | Ad Copy Generator |
-| [marketing/Social Media Post Optimizer.md](marketing/Social%20Media%20Post%20Optimizer.md) | Social Media Post Optimizer |
-| [medical/Clinical Trial Analyzer.md](medical/Clinical%20Trial%20Analyzer.md) | Clinical Trial Analyzer |
+| [healthcare/Symptom_Checker.md](healthcare/Symptom_Checker.md) | Symptom Checker |
+| [legal/Case_Law_Finder.md](legal/Case_Law_Finder.md) | Case Law Finder |
+| [legal/Legal_Contract_Reviewer.md](legal/Legal_Contract_Reviewer.md) | Legal Contract Reviewer |
+| [marketing/Ad_Copy_Generator.md](marketing/Ad_Copy_Generator.md) | Ad Copy Generator |
+| [marketing/Social_Media_Post_Optimizer.md](marketing/Social_Media_Post_Optimizer.md) | Social Media Post Optimizer |
+| [medical/Clinical_Trial_Analyzer.md](medical/Clinical_Trial_Analyzer.md) | Clinical Trial Analyzer |
 | [medical/Cognitive Bias Assessment Tool.md](medical/Cognitive%20Bias%20Assessment%20Tool.md) | Cognitive Bias Assessment Tool |
-| [medical/Medical Q&A.md](medical/Medical%20Q%26A.md) | Medical Q&A |
+| [medical/Medical_QA.md](medical/Medical_QA.md) | Medical Q&A |
 | [miscellaneous/ChatAGI.md](miscellaneous/ChatAGI.md) | ChatAGI |
 | [miscellaneous/Code Anything Now.md](miscellaneous/Code%20Anything%20Now.md) | Code Anything Now |
 | [miscellaneous/Custom Instructions.md](miscellaneous/Custom%20Instructions.md) | Custom Instructions |
@@ -47,7 +47,7 @@
 | [prompt_generation/PromptScript.md](prompt_generation/PromptScript.md) | PromptScript |
 | [prompt_generation/PromptScriptEngineer.md](prompt_generation/PromptScriptEngineer.md) | PromptScript Engineer |
 | [prompt_generation/ScriptingTemplate.md](prompt_generation/ScriptingTemplate.md) | BEGIN MNEMOSYNE {M}{SCRIPT} |
-| [sales/Sales Email Drafter.md](sales/Sales%20Email%20Drafter.md) | Sales Email Drafter |
+| [sales/Sales_Email_Drafter.md](sales/Sales_Email_Drafter.md) | Sales Email Drafter |
 | [writing_editing/editing_revision/Preserve Technical Terminology.md](writing_editing/editing_revision/Preserve%20Technical%20Terminology.md) | Preserve Technical Terminology |
 | [writing_editing/editing_revision/Proofread.md](writing_editing/editing_revision/Proofread.md) | Proofread |
 | [writing_editing/editing_revision/Rewrite.md](writing_editing/editing_revision/Rewrite.md) | Rewrite |

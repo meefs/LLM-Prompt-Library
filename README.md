@@ -28,16 +28,16 @@
 <!-- AUTO‑GENERATED: updated by scripts/build_index.py – do **not** edit manually -->
 | Category | Prompts | Example links |
 | -------- | ------: | ------------- |
-| Creative Writing | **2** | [Dialogue Generator](prompts/creative_writing/Dialogue%20Generator.md) • [Storyteller](prompts/creative_writing/Storyteller.md) |
+| Creative Writing | **2** | [Dialogue Generator](prompts/creative_writing/Dialogue_Generator.md) • [Storyteller](prompts/creative_writing/Storyteller.md) |
 | Finance | **2** | [10-K Analyzer](prompts/finance/10-KAnalyzer.md) • [Act as a venture capitalist](prompts/finance/venturecapitalist.md) |
-| Healthcare | **1** | [Symptom Checker](prompts/healthcare/Symptom%20Checker.md) |
-| Legal | **2** | [Case Law Finder](prompts/legal/Case%20Law%20Finder.md) • [Legal Contract Reviewer](prompts/legal/Legal%20Contract%20Reviewer.md) |
-| Marketing | **2** | [Ad Copy Generator](prompts/marketing/Ad%20Copy%20Generator.md) • [Social Media Post Optimizer](prompts/marketing/Social%20Media%20Post%20Optimizer.md) |
-| Medical | **3** | [Clinical Trial Analyzer](prompts/medical/Clinical%20Trial%20Analyzer.md) • [Cognitive Bias Assessment Tool](prompts/medical/Cognitive%20Bias%20Assessment%20Tool.md) |
+| Healthcare | **1** | [Symptom Checker](prompts/healthcare/Symptom_Checker.md) |
+| Legal | **2** | [Case Law Finder](prompts/legal/Case_Law_Finder.md) • [Legal Contract Reviewer](prompts/legal/Legal_Contract_Reviewer.md) |
+| Marketing | **2** | [Ad Copy Generator](prompts/marketing/Ad_Copy_Generator.md) • [Social Media Post Optimizer](prompts/marketing/Social_Media_Post_Optimizer.md) |
+| Medical | **3** | [Clinical Trial Analyzer](prompts/medical/Clinical_Trial_Analyzer.md) • [Cognitive Bias Assessment Tool](prompts/medical/Cognitive%20Bias%20Assessment%20Tool.md) |
 | Miscellaneous | **8** | [ChatAGI](prompts/miscellaneous/ChatAGI.md) • [Code Anything Now](prompts/miscellaneous/Code%20Anything%20Now.md) |
 | Programming | **17** | [AWS Architect](prompts/programming/AWS%20Architect.md) • [Azure Architect](prompts/programming/Azure%20Architect.md) |
 | Prompt Generation | **7** | [CoT_Probe_o3](prompts/prompt_generation/CoT_Probe_o3.md) • [DALL-E](prompts/prompt_generation/DALL-E.md) |
-| Sales | **1** | [Sales Email Drafter](prompts/sales/Sales%20Email%20Drafter.md) |
+| Sales | **1** | [Sales Email Drafter](prompts/sales/Sales_Email_Drafter.md) |
 | Writing & Editing | **14** | [Preserve Technical Terminology](prompts/writing_editing/editing_revision/Preserve%20Technical%20Terminology.md) • [Proofread](prompts/writing_editing/editing_revision/Proofread.md) |
 | **Total** | **59** | — |
 <!-- /AUTO‑GENERATED -->

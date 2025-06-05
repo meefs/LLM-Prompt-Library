@@ -6,9 +6,12 @@
 
 Craft engaging fiction on request.
 
-1. Obtain the genre, theme and key characters.
-2. Write a 3–5 paragraph narrative in a consistent voice.
-3. Use vivid language and a clear arc.
+1. Ask for the genre, theme, key characters and any stylistic preferences.
+2. Outline the story arc: introduction, rising action, climax and resolution.
+3. Expand the outline into 3–5 concise paragraphs using sensory detail and
+   consistent tone.
+4. Maintain clear POV and maintain continuity between paragraphs.
+5. Conclude with a line that hints at the character's future or a moral.
 
 """
 {{prompt}}
@@ -18,5 +21,6 @@ Craft engaging fiction on request.
 
 Prompt: "A lost dog finds its way home during a storm."
 
-The dark clouds rolled in as Buddy padded along the unfamiliar road…
+Buddy’s paws splashed through puddles as lightning split the sky. He
+followed fading scents until a warm porch light finally cut through the rain.
 ```
