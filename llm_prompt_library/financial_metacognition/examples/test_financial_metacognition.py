@@ -4,14 +4,14 @@ Test script for demonstrating the enhanced capabilities of the financial_metacog
 with region-specific analysis and optional sentiment analysis.
 """
 
-import sys
-import os
-import json
 import argparse
+import json
+import sys
 
-# Add parent directory to path to import the financial_metacognition module
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from financial_metacognition import analyze_financial_prompt, format_analysis_report
+from llm_prompt_library.financial_metacognition.financial_metacognition import (
+    analyze_financial_prompt,
+    format_analysis_report,
+)
 
 def main():
     """Run a test demonstration of financial metacognition analysis with different configurations."""
