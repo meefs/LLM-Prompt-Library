@@ -20,12 +20,6 @@
 </p>
 
 > **Battle‑tested prompt templates & dev‑scripts for every major LLM.**
-
----
-## ⚡ Quick peek
-
-* **Live demo** → <https://abilzerian.github.io/LLM-Prompt-Library/>  
-  Zero-JS until you open the page; the prompt list is rendered client-side from `prompts/INDEX.md`.
   
 ---
 
