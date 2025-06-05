@@ -366,7 +366,25 @@ class PromptAnalyzer:
             recommendations.extend(random.sample(general_recs, min(2, len(general_recs))))
         
         return recommendations
-    
+
+    def evaluate(self, prompt: str) -> float:
+        """Evaluate a prompt string and return a quality score between 0 and 1."""
+        if not prompt or len(prompt.strip()) < 10:
+            return 0.0
+
+        sections = self.extract_sections(prompt)
+        readability = self.calculate_readability_score(prompt)
+        structure = self.calculate_structure_score(sections)
+        clarity = self.calculate_clarity_score(prompt)
+
+        quality_score = (
+            readability * 0.3 +
+            structure * 0.4 +
+            clarity * 0.3
+        ) / 100
+
+        return max(0.0, min(1.0, quality_score))
+
     def analyze_prompt(self, file_path: str) -> Dict[str, Any]:
         """
         Analyze a single prompt file.
