@@ -1,7 +1,6 @@
 from pathlib import Path
-from scripts import build_index
-
-extract_title = build_index.extract_title
+import scripts.build_index as build_index
+from scripts.build_index import extract_title
 
 
 def test_extract_title_heading(tmp_path: Path):
