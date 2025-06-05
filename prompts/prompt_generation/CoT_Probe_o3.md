@@ -386,6 +386,6 @@ solution_steps = [
 ]
 
 
-When you understand, please state "Understood." and await the problem. 
+When you understand, please state "Understood." and await the problem.
 
 ```
