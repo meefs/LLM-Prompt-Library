@@ -1,7 +1,7 @@
 import os
 from pytest import approx
 
-from scripts.token_counter import TokenCounter
+from llm_prompt_library.token_counter import TokenCounter
 
 def test_extract_content_strip_markdown():
     text = "# Title\nSome *bold* text\n- item"
