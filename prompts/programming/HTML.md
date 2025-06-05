@@ -24,7 +24,7 @@
 
 <h2>Keep your code maintainable</h2>
 
-<p>Use:</p>  
+<p>Use:</p>
 <ul>
   <li>Indentation for nested elements</li>
   <li>Comments where needed</li>

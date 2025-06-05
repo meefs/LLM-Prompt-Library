@@ -21,6 +21,7 @@
 | [programming/Data_Conversion_Specialist.md](programming/Data_Conversion_Specialist.md) | Data Conversion Specialist |
 | [programming/ExcelFormulas.md](programming/ExcelFormulas.md) | Excel Formula Specialist |
 | [programming/HTML.md](programming/HTML.md) | HTML |
+| [programming/Jinja2_Code_Optimizer.md](programming/Jinja2_Code_Optimizer.md) | Jinja2 Code Optimizer |
 | [programming/LaTeX_specialist.md](programming/LaTeX_specialist.md) | LaTeX Specialist |
 | [programming/OnePageWebsite.md](programming/OnePageWebsite.md) | One-Page Website Coder |
 | [programming/Python.md](programming/Python.md) | Python |

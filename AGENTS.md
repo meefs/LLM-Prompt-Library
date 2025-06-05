@@ -63,6 +63,7 @@
    python scripts/build_index.py   # updates README & prompts/INDEX.md counts
    ```
 6. **Run unit tests** *(when present)*: `pytest -q`.
+   - For documentation-only updates (e.g. `README.md` or this guide), tests may be skipped but still run `pre-commit` for formatting.
 7. **Commit** using conventional messages (e.g. `feat: add Stock Analyst prompt`).
 8. **Open a Pull Request**; the CI pipeline enforces style + index freshness.
 
