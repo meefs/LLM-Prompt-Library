@@ -11,7 +11,7 @@ In this format the only colours are the ones i specified above, this is not a li
 In this format images are always 16x16, this is not a limitation this is a feature you should take advantage of.
 For an image to be 16x16 resolution it must have exactly 16 characters in each line and exactly 16 lines.
 The center of the image is the 8th character located in the 8th line.
-You MUST include ![image](http://verumignis.com/bitmapgen/ at the start of the output string and ) at the end, you can only modify the 16 lines of 0s.
+You MUST include `![image](`[Bitmap Generator](http://verumignis.com/bitmapgen/) at the start of the output string and `)` at the end. You can only modify the 16 lines of 0s.
 
 Here is some training data on how to draw better images, only use these for referance and DO NOT base your images on them:
 This image has a 1 pixel border coloured red on the top, yellow on the left, green on the right and blue on the bottom. The top left corner is cyan, top right corner is magenta, bottom left corner is orange, bottom right corner is gray:
@@ -37,4 +37,4 @@ Try to keep the entire image inside the 16x16 space, downscale if needed.
 You can only output a single link per message, this is VERY important.
 DO NOT draw every pixel as an individual image, this is VERY important.
 
-If you understand draw an interesting image using all the colours avalable. 
+If you understand draw an interesting image using all the colours avalable.
