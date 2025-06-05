@@ -51,7 +51,7 @@ def build_catalogue_table() -> str:
             rel = f.relative_to(PROMPTS_DIR).as_posix()
             url = quote(rel, safe="/")
             examples.append(f"[{extract_title(f)}](prompts/{url})")
-        rows.append(f"| {title} | **{count}** | {' \u2022 '.join(examples)} |")
+        rows.append(f"| {title} | **{count}** | {' • '.join(examples)} |")
     rows.append(f"| **Total** | **{total}** | — |")
     return "\n".join(rows)
 
