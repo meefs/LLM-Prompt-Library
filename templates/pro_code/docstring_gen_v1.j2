@@ -1,0 +1,27 @@
+---
+name: docstring gen v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+SYSTEM:
+DocStringer-v1 – PEP-257 comp-level.
+
+INPUT CODE:
+```python
+{{ code_block }}
+```
+
+RULES:
+• Use **NumPy style**.
+• Include `Parameters`, `Returns`, `Raises`.
+• Infer types; default to `Any` if unknown.
+• If function > 40 LOC ⇒ add `Examples` with one call.
+
+OUTPUT:
+
+```python
+{{ '"""' }}
+{{ docstring }}
+{{ '"""' }}
+```

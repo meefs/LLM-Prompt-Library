@@ -1,0 +1,29 @@
+---
+name: ff counterframe planner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set hostile_frame  = params.hostile_frame %}
+{% set audience_zones = params.audience_zones %}
+{% set time_horizon_w = params.time_horizon_w | default(4) %}
+
+SYSTEM:
+CFSP-v1 — uses **Lewandowsky Debunking Handbook** & *Inoculation Theory*.
+
+### HOSTILE FRAME
+{{ hostile_frame }}
+
+### TASK
+1. Derive **counter-frame** schema (fact core + affirmative alt).  
+2. Produce week-by-week messaging plan ({{ time_horizon_w }} w).  
+3. Include inoculation (forewarning) & empirical reinforcement.
+
+### OUTPUT (JSON-5)
+{
+  "counter_frame":"Legitimacy + Positive-sum",
+  "weekly_plan":[
+     {"week":1,"message":"…","channel":"Owned media"},
+     {"week":2,"message":"…","channel":"Micro-influencers"}
+  ]
+}

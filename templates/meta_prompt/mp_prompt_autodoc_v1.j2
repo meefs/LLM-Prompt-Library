@@ -1,0 +1,17 @@
+{% set prompt_body     = params.prompt_body %}
+SYSTEM:
+PAD-v1 — extracts **metadata headers** for prompt registry.
+
+### TASK
+Produce Markdown header with: ▸ Purpose ▸ Inputs ▸ Outputs ▸ Owners ▸ Version.
+
+### OUTPUT
+```md
+---
+purpose: "Classify customer sentiment"
+inputs:  "customer_email"
+outputs: "sentiment_label, confidence"
+owners:  "@nlp-team"
+version: "v1.0.0"
+---
+```

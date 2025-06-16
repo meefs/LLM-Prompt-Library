@@ -1,0 +1,21 @@
+---
+name: vc antidilution calculator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set last_round_price = params.last_round_price %}
+{% set new_round_price  = params.new_round_price %}
+{% set method           = params.method | default("broad_based") %}
+{% set pool_pct_pref    = params.pool_pct_pref | default(10) %}
+
+SYSTEM:
+ADC-v1 — computes **conversion-price reset** & share issuance.
+
+### OUTPUT (JSON-5)
+{
+  "old_conv_price":{{ last_round_price }},
+  "new_conv_price":#,
+  "extra_pref_shares":#,
+  "dilution_to_common_pct":#
+}

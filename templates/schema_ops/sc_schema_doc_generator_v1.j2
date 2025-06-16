@@ -1,0 +1,23 @@
+---
+name: sc schema doc generator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set schema_source   = params.schema_source %}
+{% set doc_format      = params.doc_format | default("markdown") %}
+
+SYSTEM:
+SDG-v1 — produces **developer-friendly schema docs** with examples.
+
+### TASK
+Iterate properties → table; embed sample JSON snippet.
+
+### OUTPUT
+```md
+### Object: Order
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| id    | int  | ✓        | Unique PK   |
+| ...   |      |          |             |
+```

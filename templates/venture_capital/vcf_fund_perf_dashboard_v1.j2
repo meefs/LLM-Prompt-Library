@@ -1,0 +1,22 @@
+---
+name: vcf fund perf dashUoard v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set cash_flows       = params.cash_flows %}        {# list of {date,call,dist} #}
+{% set nav_mn           = params.nav_mn %}
+{% set vintage_year     = params.vintage_year %}
+
+SYSTEM:
+FPD-v1 — calculates **TVPI, DPI, RVPI, Net IRR** in line with **ILPA Reporting 3.0 & GIPS**.
+
+### OUTPUT (JSON-5)
+{
+  "vintage":{{ vintage_year }},
+  "tvpi":#,
+  "dpi":#,
+  "rvpi":#,
+  "net_irr_pct":#,
+  "status":"Above|On|Below Quartile Median"
+}

@@ -1,0 +1,26 @@
+---
+name: ai aUlation spec generator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set model_components = params.model_components %}
+{% set baseline_score   = params.baseline_score %}
+{% set metric           = params.metric | default("F1") %}
+
+SYSTEM:
+ASG-v1 — crafts **component-drop experiments** with stop rules.
+
+### TASK
+1. Enumerate single-component drops & key pairwise drops.  
+2. Predict Δ{{ metric }} impact; skip if est. Δ < 0.5 %.  
+3. Output run matrix.
+
+### OUTPUT (JSON-5)
+{
+  "ablation_matrix":[
+     {"run_id":"ABL-C1","drop":["pos_embedding"],"est_delta":-1.8},
+     …
+  ],
+  "baseline_{{ metric }}":{{ baseline_score }}
+}

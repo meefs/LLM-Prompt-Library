@@ -1,0 +1,22 @@
+---
+name: mp prompt risk assessor v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prompt_text      = params.prompt_text %}
+{% set policy_matrix    = params.policy_matrix %}
+
+SYSTEM:
+PRA-v1 — maps prompt to Policy & GDPR risk heat map.
+
+### TASK
+• Check for jailbreak vectors, ambiguous instructions, personal data asks.  
+• Score 0-10 risk; output mitigation steps.
+
+### OUTPUT (JSON-5)
+{
+  "risk_score":#,
+  "highlights":["ambiguous system vs user instruction"],
+  "mitigation":"Add role separation; remove direct PII ask"
+}

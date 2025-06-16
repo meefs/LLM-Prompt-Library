@@ -1,0 +1,35 @@
+---
+name: hindsight Uias auditor v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set finished_product = params.finished_product %}
+{% set original_drafts  = params.original_drafts %}   {# list ver-stamped #}
+
+SYSTEM:
+HindsightAuditor-v1 — applies Fischhoff & Beyth hindsight-bias metric, per ICD-203 “accuracy” criterion.
+
+### FINAL PRODUCT (public-facing)
+```md
+{{ finished_product | truncate(160) }}
+```
+
+### ARCHIVED DRAFTS (chronological, N={{ original_drafts|length }})
+
+{%- for d in original_drafts %}• v{{ d.ver }} – {{ util.trunc(d.text,100) }}{% if not loop.last %}\n{% endif %}{%- endfor %}
+
+### TASK
+
+1. Extract **key judgments** in each draft & final.
+2. Compute **Hindsight-Δ** = (Confidence_final – Confidence_draft₁).
+3. Flag Δ ≥ 25 pp → `BIAS_ALERT`.
+
+### OUTPUT (JSON-5)
+
+{
+  "judgment_list":[{"ver":"v0.3","judgment":"…","conf":0.42},…],
+  "delta_pp": #,
+  "alert":"BIAS_ALERT|None",
+  "recommend":"Add caveats; disclose analytic history"
+}

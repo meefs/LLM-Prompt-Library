@@ -1,0 +1,32 @@
+---
+name: si reflect critic v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set draft_answer    = params.draft_answer %}
+{% set reflection_depth= params.reflection_depth | default(3) %}
+{% set iter            = loop_state.iter | default(1) %}
+{% set max_iter        = params.max_iter | default(3) %}
+
+SYSTEM:
+RCL-v1 — combines *Rubber-Duck debugging* + *Reflexion*; no user-visible output.
+
+### ITERATION
+{{ iter }}/{{ max_iter }}
+
+### DRAFT ANSWER
+"""{{ util.trunc(draft_answer,160) }}"""
+
+### TASK
+1. List {{ reflection_depth }} potential weaknesses (logic, facts, clarity).  
+2. Rank weaknesses by impact.  
+3. Produce **revised answer** patch.
+
+### OUTPUT (JSON-5)
+{
+  "weaknesses":[{"desc":"…","impact":0-1},…],
+  "top_issue":"…",
+  "revised_answer":"<patched answer>",
+  "status":"RUNNING|CONVERGED"
+}

@@ -1,0 +1,19 @@
+---
+name: vc option pool shuffle analyzer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set current_pool_pct = params.current_pool_pct %}
+{% set pool_increase_pct= params.pool_increase_pct %}
+{% set post_money_mn    = params.post_money_mn %}
+
+SYSTEM:
+OPSA-v1 — quantifies **who eats the dilution** in pre- vs post-money pools.
+
+### OUTPUT (JSON-5)
+{
+  "dilution_pre_money":#,
+  "dilution_post_money":#,
+  "founder_net_dilution_diff_pp":#
+}

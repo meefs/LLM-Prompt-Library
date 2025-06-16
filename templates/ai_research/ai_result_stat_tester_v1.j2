@@ -1,0 +1,21 @@
+---
+name: ai result stat tester v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set run_metrics_A    = params.run_metrics_A %}
+{% set run_metrics_B    = params.run_metrics_B %}
+{% set alpha            = params.alpha | default(0.05) %}
+SYSTEM:
+RST-v1 — Welch’s t-test + Benjamini-Hochberg correction.
+
+### TASK
+Compute p-value; output *significant* if p < {{ alpha }}.
+
+### OUTPUT (JSON-5)
+{
+  "p_value":#,
+  "significant":true|false,
+  "effect_size":"small|med|large"
+}

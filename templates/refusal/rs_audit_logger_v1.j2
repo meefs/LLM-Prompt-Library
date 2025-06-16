@@ -1,0 +1,20 @@
+---
+name: rs audit logger v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set refusal_payload = params.refusal_payload %}
+{% set meta            = params.meta %}
+SYSTEM:
+RAL-v1 — produces immutable log row (ISO 27001 A.12.4).
+
+### OUTPUT (JSON-5)
+{
+  "ts":"{{ meta.ts }}",
+  "user_id":"{{ meta.uid }}",
+  "decision":"{{ refusal_payload.decision }}",
+  "matched_clause":"{{ refusal_payload.matched_clause }}",
+  "route":"{{ meta.route }}",
+  "hash":"{{ util.sha256(refusal_payload|tojson) }}"
+}

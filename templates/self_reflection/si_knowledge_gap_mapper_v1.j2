@@ -1,0 +1,22 @@
+---
+name: si knowledge gap mapper v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set query_context   = params.query_context %}
+{% set answer_outline  = params.answer_outline %}
+
+SYSTEM:
+KGM-v1 — highlights unanswered sub-questions for optional follow-up.
+
+### TASK
+1. Break context into granular questions.  
+2. Mark which are **addressed** in outline.  
+3. Output gap list & priority.
+
+### OUTPUT (JSON-5)
+{
+  "gaps":[{"question":"…","priority":"High"},…],
+  "coverage_score":#
+}

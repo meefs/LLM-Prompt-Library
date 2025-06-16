@@ -1,0 +1,24 @@
+---
+name: pe param sweep plan v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set base_prompt    = params.base_prompt %}
+{% set max_trials     = params.max_trials | default(8) %}
+
+SYSTEM:
+PE-Sweep-Plan-v1 — designs minimal yet diverse param grid.
+
+### TASK
+Return grid ≤ {{ max_trials }} covering temperature, top_p, presence_penalty extremes.
+
+### OUTPUT (JSON-5)
+{
+  "grid":[
+    {"temperature":1.2,"top_p":0.95},
+    …
+  ],
+  "eval_metric":"choose-1-best",
+  "notes":"Edge cases + typical band"
+}

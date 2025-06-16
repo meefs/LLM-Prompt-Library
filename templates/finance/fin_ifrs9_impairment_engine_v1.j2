@@ -1,0 +1,22 @@
+---
+name: fin ifrs9 impairment engine v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set ecl_inputs       = params.ecl_inputs %}         {# stage, PD, LGD, EAD, macro-overlays #}
+{% set overlay_scen     = params.overlay_scen %}
+SYSTEM:
+IF9-v1 — computes **12-month & lifetime ECL** with overlay governance.
+
+### TASK
+1. For each exposure: ECL = PD × LGD × EAD × DiscFactor.  
+2. Apply macro overlay weightings; bucket into Stage 1-3.  
+3. Summarise impairment movement.
+
+### OUTPUT (JSON-5)
+{
+  "stage_summary":[{"stage":2,"ecl_usd_mn":12.5}],
+  "overlay_adjustment_pct":#,
+  "delta_vs_q_prev":#
+}

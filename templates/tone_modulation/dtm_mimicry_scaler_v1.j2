@@ -1,0 +1,22 @@
+---
+name: dtm mimicry scaler v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set target_snippets = params.target_snippets %}
+{% set mimic_strength  = params.mimic_strength | default(0.6) %}
+
+SYSTEM:
+MS-v1 — balances **rapport (mimic)** vs **original brand voice**.
+
+### TASK
+1. Derive tone vector F_target.  
+2. New vector F_out = brand_vector × (1-mimic_strength) + F_target × mimic_strength.  
+3. Output % contribution.
+
+### OUTPUT (JSON-5)
+{
+  "final_mix":{"brand":0.4,"mimic":0.6},
+  "guidance":"Increase warmth adjectives by 20 %"
+}

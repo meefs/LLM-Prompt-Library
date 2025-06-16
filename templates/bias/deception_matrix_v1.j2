@@ -1,0 +1,26 @@
+---
+name: deception matrix v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set stream_items  = params.stream_items %}
+{% set baseline_sig  = params.baseline_sig %}
+{% set deception_cues= ["Inconsistency","Anomaly","Repetition","Coordination"] %}
+
+SYSTEM:
+DecepDet-v1 — executes Grabo’s deception indicators.
+
+### STREAM SNAPSHOT
+{%- for s in stream_items[:10] %}• {{ util.truncate_txt(s,80) }}{% if not loop.last %}\n{% endif %}{%- endfor %}
+
+### TASK
+1. Score each item 0-3 for every deception cue vs baseline.  
+2. Sum scores; if cluster avg ≥ 6 → flag “Possible Deception Campaign”.
+
+### OUTPUT (JSON-5)
+{
+  "item_scores": [{"id":#,"cue_scores":{"Inc":1,…},"total":#},…],
+  "cluster_avg": #,
+  "alert":"DECEPTION_FLAG|None"
+}

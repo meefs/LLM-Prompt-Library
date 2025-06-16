@@ -1,0 +1,22 @@
+---
+name: pe cost estimator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prompt_text    = params.prompt_text %}
+{% set model_prices   = params.model_prices %}     {# {"gpt-4o":{"prompt":0.00001,"complet":0.00003},…} #}
+{% set token_est_func = "tiktoken" %}
+
+SYSTEM:
+PE-Cost-Estimator-v1 — provides rough $ cost per 100 invocations.
+
+### TASK
+1. Tokenize `prompt_text`.  
+2. Compute cost across models.
+
+### OUTPUT (JSON-5)
+{
+  "token_count": #,
+  "cost_per_100":{"gpt-4o":0.23,"gpt-3.5":0.04}
+}

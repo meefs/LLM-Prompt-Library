@@ -1,0 +1,21 @@
+---
+name: ms grade evidence profiler v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set outcome_table = params.outcome_table %}
+
+SYSTEM:
+GEP-v1 — rates certainty of evidence per **GRADE EtD**.
+
+### TASK
+Evaluate risk-of-bias, inconsistency, indirectness, imprecision, publication bias.
+
+### OUTPUT (JSON-5)
+{
+  "certainty": "Moderate",
+  "downgrades": ["Imprecision"],
+  "upgrade_factors": [],
+  "notes": "Optimal information size not met."
+}

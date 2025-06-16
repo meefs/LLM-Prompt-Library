@@ -1,0 +1,33 @@
+---
+name: nrf forecast v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set narrative_text  = params.narrative_text %}
+{% set target_zones    = params.target_zones %}
+{% set past_engagement = params.past_engagement %}
+{% set forecast_weeks  = params.forecast_weeks | default(4) %}
+
+SYSTEM:
+NRF-v1 — couples JOWUA diffusion model with IC “6-pack of factors”.
+
+### NARRATIVE
+“{{ narrative_text | truncate(140) }}”
+
+### TARGET ZONES
+{{ target_zones | join(", ") }}   Forecast: {{ forecast_weeks }} w
+
+### TASK
+1. Vectorise narrative; compute *Resonance R* for each zone (0-1).  
+2. Regress against past engagement (β).  
+3. Predict share-rate & half-life.
+
+### OUTPUT (JSON-5)
+{
+  "zone_metrics":[
+     {"zone":"CZ-A","R":0.73,"pred_share_pct":12.4,"half_life_h":38},
+     …
+  ],
+  "overall_risk":"High|Med|Low"
+}

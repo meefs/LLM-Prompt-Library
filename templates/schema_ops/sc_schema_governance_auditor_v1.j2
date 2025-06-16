@@ -1,0 +1,20 @@
+---
+name: sc schema governance auditor v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set candidate_schema = params.candidate_schema %}
+{% set gov_rules        = params.gov_rules %}    {# regex & lint rules #}
+
+SYSTEM:
+SGA-v1 — checks field naming, PII flags, version tags (ISO 11179).
+
+### TASK
+List rule violations; suggest fixes.
+
+### OUTPUT (JSON-5)
+{
+  "violations":[{"field":"ssn","rule":"PII_no_hash","suggest":"hash or tokenize"}],
+  "grade":"B"
+}

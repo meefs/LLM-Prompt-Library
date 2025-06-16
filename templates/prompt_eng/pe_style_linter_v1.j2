@@ -1,0 +1,23 @@
+---
+name: pe style linter v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prompt_text   = params.prompt_text %}
+{% set style_rules   = params.style_rules %}   {# {id:regex or desc} #}
+
+SYSTEM:
+PE-Style-Lint-v1 — enforces org prompt style (e.g., no 1st-person, max 3 bullet layers).
+
+### RULESET
+{{ style_rules|tojson }}
+
+### TASK
+List violations with line numbers.
+
+### OUTPUT (JSON-5)
+{
+  "violations":[{"rule":"NO_FIRST_PERSON","line":3,"excerpt":"I will…"},…],
+  "compliant": true|false
+}

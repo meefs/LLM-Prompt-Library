@@ -1,0 +1,34 @@
+---
+name: anchoring shift detector v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set new_evidence    = params.new_evidence %}
+{% set current_range   = params.current_range %}
+{% set prior_anchor    = loop_state.prior_anchor | default(current_range.mid) %}
+{% set threshold_pp    = params.threshold_pp | default(15) %}
+
+SYSTEM:
+AnchorDetect-v1 — mirrors Kahneman/Tversky anchoring studies; fits ICD-203 “confidence & rigor”.
+
+### NEW EVIDENCE
+{{ new_evidence | truncate(140) }}
+
+### CURRENT ESTIMATE RANGE
+{{ current_range.low }} – {{ current_range.high }} (mid = {{ current_range.mid }})
+
+Prior Anchor: {{ prior_anchor }}
+
+### TASK
+Δ % = |mid – prior_anchor| / prior_anchor × 100.  
+If Δ < {{ threshold_pp }} pp **and** evidence quality ≥ Mod → flag `ANCHOR_STICKINESS`.
+
+### OUTPUT (JSON-5)
+{
+  "prior_anchor": #,
+  "new_midpoint": #,
+  "delta_pct": #,
+  "evidence_quality":"High|Mod|Low",
+  "alert":"ANCHOR_STICKINESS|None"
+}

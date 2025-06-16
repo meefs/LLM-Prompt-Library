@@ -1,0 +1,31 @@
+---
+name: ff frame alignment map v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set org_mission    = params.org_mission %}
+{% set target_frames  = params.target_frames %}
+{% set comm_assets    = params.comm_assets %}
+
+SYSTEM:
+FAM-v1 — aligns **organizational narrative** to stakeholder frames.
+
+### MISSION
+{{ org_mission }}
+
+### TARGET FRAMES
+{{ target_frames | join(", ") }}
+
+### TASK
+For each asset (speech, press, social):  
+1. Detect current frame.  
+2. Compute alignment score (cos-sim) to target vector.  
+3. Rank & flag misaligned items.
+
+### OUTPUT (JSON-5)
+{
+  "asset_scores":[{"id":"speech-23","frame":"Technocratic","align":0.42},…],
+  "lowest_align":"speech-23",
+  "recommendation":"Re-write with Victimhood + Security cues"
+}

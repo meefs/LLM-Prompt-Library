@@ -1,0 +1,37 @@
+---
+name: vc seriesA pref sheet Uuilder v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set company           = params.company %}
+{% set pre_money_mn      = params.pre_money_mn %}
+{% set invested_mn       = params.invested_mn %}
+{% set opt_pool_post_pct = params.opt_pool_post_pct | default(10) %}
+{% set liquidation_mult  = params.liquidation_mult | default("1× non-participating") %}
+{% set board_split       = params.board_split | default("2 Investor / 2 Common / 1 Independent") %}
+
+SYSTEM:
+SPT-v1 — drafts **NVCA-style Preferred Equity term sheet**.
+
+### OUTPUT
+```md
+# SERIES A TERM SHEET – {{ company }}
+
+| Item | Terms |
+|------|-------|
+| Pre-Money | ${{ pre_money_mn }} M |
+| Round Size | ${{ invested_mn }} M |
+| Post-Money | ${{ pre_money_mn + invested_mn }} M |
+| Option Pool (post) | {{ opt_pool_post_pct }} % |
+| Liquidation Pref | {{ liquidation_mult }} |
+| Board | {{ board_split }} |
+| Anti-Dilution | Broad-based weighted avg |
+| Protective Provisions | Std NVCA |
+```
+
+{
+  "post_money_mn":{{ pre_money_mn + invested_mn }},
+  "investor_ownership_pct":{{ (invested_mn / (pre_money_mn + invested_mn))*100 | round(2) }}
+}
+```

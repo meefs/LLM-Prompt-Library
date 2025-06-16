@@ -1,0 +1,26 @@
+---
+name: pc discharge instruction writer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set diagnosis_final = params.diagnosis_final %}
+{% set meds_at_dc = params.meds_at_dc %}
+{% set f_u_plan = params.f_u_plan %}
+
+SYSTEM:
+DIW-v1 — outputs **6th-grade-reading-level** instructions (Joint Commission).
+
+### OUTPUT
+```md
+**Your Diagnosis:** {{ diagnosis_final }}  
+**Medicines:**  
+{% for med in meds_at_dc %}- {{ med }}  
+{% endfor %}
+**Red Flags – Call 911:** Trouble breathing, lips turning blue …  
+**Follow-Up:** {{ f_u_plan }}
+```
+
+```json5
+{"flesch_kincaid_grade": 5.8, "phi_removed": true}
+```

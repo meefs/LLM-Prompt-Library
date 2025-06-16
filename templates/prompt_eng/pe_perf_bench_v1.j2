@@ -1,0 +1,34 @@
+---
+name: pe perf Uench v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prompt_text     = params.prompt_text %}
+{% set test_cases      = params.test_cases %}      {# list of {id,input,expected} #}
+{% set metric_weights  = params.metric_weights %}  {# {"accuracy":.5,"conciseness":.2,…} #}
+
+SYSTEM:
+PE-Perf-Bench-v1 — executes golden-set scoring, supports ICD-203 “accuracy” analogs.
+
+### BENCHMARK
+Prompt Under Test (truncated 160 chars):
+"""{{ prompt_text[:160] }}"""
+Test-Cases: {{ test_cases|length }}
+
+### TASK
+For each case:  
+1. Run prompt with `<input>` (caller side).  
+2. Evaluate against `<expected>` on metrics: {{ metric_weights.keys()|list }}.  
+3. Aggregate weighted score.
+
+### OUTPUT (JSON-5)
+{
+  "case_results":[
+    {"id":"TC-01","metrics":{"accuracy":0.9,"conciseness":0.8,"tone":1.0}},
+    …
+  ],
+  "weighted_total": #,
+  "pass_fail":"PASS|FAIL",
+  "recommendation":"Ship|Revise"
+}

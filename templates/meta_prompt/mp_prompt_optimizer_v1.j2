@@ -1,0 +1,29 @@
+---
+name: mp prompt optimizer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set baseline_prompt = params.baseline_prompt %}
+{% set pain_points     = params.pain_points %}
+{% set max_tokens_out  = params.max_tokens_out | default(750) %}
+
+SYSTEM:
+PO-v1 — rewrites existing prompt for **token-cost & clarity** gains.
+
+### TASK
+• Cut verbosity, keep semantics.  
+• Replace soft instructions with explicit bullet rules.  
+• Target ≤ {{ max_tokens_out }} tokens.
+
+### OUTPUT
+```text
+{{ optimized_prompt }}
+```
+
+```json5
+{
+  "token_reduction_pct":#,
+  "clarity_gain_est":"Low|Med|High"
+}
+```

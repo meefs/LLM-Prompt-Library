@@ -1,0 +1,18 @@
+---
+name: rs multilang refusal v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set user_lang       = params.user_lang %}
+{% set base_refusal    = params.base_refusal %}
+{% set lang_map        = params.lang_map %}   {# "fr":"Je suis désolé…" #}
+
+SYSTEM:
+MLR-v1 — localises refusal text, preserves no-policy-spill.
+
+### OUTPUT (JSON-5)
+{
+  "rendered_refusal":"{{ lang_map[user_lang] or base_refusal }}",
+  "lang":"{{ user_lang }}"
+}

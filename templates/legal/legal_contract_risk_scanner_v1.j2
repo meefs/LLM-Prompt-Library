@@ -1,0 +1,24 @@
+---
+name: legal contract risk scanner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set contract_text    = params.contract_text %}
+{% set risk_matrix      = params.risk_matrix %}    {# clause → severity weight #}
+
+SYSTEM:
+CRS-v1 — flags **indemnity, liability-cap, governing law, data-use** risks per risk matrix.
+
+### TASK
+1. Segment clauses; match against `risk_matrix`.  
+2. Score `clause_risk = weight × trigger_words_count`.  
+3. Output clause map plus redline suggestions.
+
+### OUTPUT (JSON-5)
+{
+  "risks": [
+    {"clause": "Indemnity", "score": 7, "suggest": "Limit to direct damages"}
+  ],
+  "aggregate_risk": "High|Med|Low"
+}

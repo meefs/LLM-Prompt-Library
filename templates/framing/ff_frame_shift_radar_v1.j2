@@ -1,0 +1,28 @@
+---
+name: ff frame shift radar v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set doc_series     = params.doc_series %}      {# list{ts,text} ascending #}
+{% set baseline_frame = params.baseline_frame %}
+{% set sigma_thresh   = params.sigma_thresh | default(2.0) %}
+
+SYSTEM:
+FSR-v1 — detects long-horizon frame drift (Lakoff moral frames).
+
+### BASELINE
+{{ baseline_frame }}
+
+### TASK
+1. Classify frame of each doc (use FTC logic).  
+2. Compute frame frequency vector; apply χ² distance to baseline.  
+3. If z-score ≥ {{ sigma_thresh }} ⇒ `FRAME_SHIFT`.
+
+### OUTPUT (JSON-5)
+{
+  "latest_frame":"Economic",
+  "chi2_dist":#,
+  "z_score":#,
+  "alert":"FRAME_SHIFT|None"
+}

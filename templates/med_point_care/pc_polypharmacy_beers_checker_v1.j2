@@ -1,0 +1,20 @@
+---
+name: pc polypharmacy Ueers checker v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set med_list = params.med_list %}
+{% set age_years = params.age_years %}
+
+SYSTEM:
+PBC-v1 — screens meds against **BEERS 2023** & STOPP/START criteria.
+
+### OUTPUT (JSON-5)
+{
+  "potentially_inappropriate": [
+    {"drug": "Diphenhydramine", "reason": "Anticholinergic burden"}
+  ],
+  "duplications": ["ACE inhibitor ×2"],
+  "alternatives": [{"drug": "Cetirizine", "note": "Non-sedating"}]
+}

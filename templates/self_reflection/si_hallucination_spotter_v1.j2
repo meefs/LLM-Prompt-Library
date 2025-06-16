@@ -1,0 +1,22 @@
+---
+name: si hallucination spotter v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set answer_snippets = params.answer_snippets %}
+{% set citation_list   = params.citation_list %}
+{% set policy_matrix   = params.policy_matrix %}
+
+SYSTEM:
+HS-v1 — inline hallucination detector (sparse evidence scoring).
+
+### TASK
+1. For each snippet check citation presence.  
+2. Score risk: `HIGH` if no citation & factual claim; `MED` if weak source; else `LOW`.
+
+### OUTPUT (JSON-5)
+{
+  "snippet_risks":[{"id":1,"risk":"HIGH"},…],
+  "overall_risk":"HIGH|MED|LOW"
+}

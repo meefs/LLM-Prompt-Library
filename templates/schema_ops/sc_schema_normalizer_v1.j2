@@ -1,0 +1,19 @@
+---
+name: sc schema normalizer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set nested_schema   = params.nested_schema %}
+{% set mode            = params.mode | default("flatten") %}
+SYSTEM:
+SN-v1 — flattens or de-normalizes hierarchical schemas for analytics lakes.
+
+### TASK
+• `flatten` ⇒ dot-notation keys, produce BigQuery DDL.  
+• `denorm`  ⇒ create nested JSON from flat columns.
+
+### OUTPUT (JSON-5)
+{
+  "normalized_schema":[{"name":"user.address.city","type":"STRING"}]
+}

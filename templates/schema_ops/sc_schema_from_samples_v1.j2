@@ -1,0 +1,26 @@
+---
+name: sc schema from samples v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set json_samples    = params.json_samples %}
+{% set target_dialect  = params.target_dialect | default("json-schema-2020-12") %}
+{% set nullable_mode   = params.nullable_mode  | default("explicit") %}
+
+SYSTEM:
+SfS-v1 — infers strict schema from representative JSON docs.
+
+### TASK
+1. Union-intersect sample fields; infer types, enums, min/max.  
+2. Mark **nullable** fields per `nullable_mode`.  
+3. Emit schema in {{ target_dialect }} with `$schema` header.
+
+### OUTPUT (JSON-5)
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"InferredSchema",
+  "type":"object",
+  "properties":{ … },
+  "required":[…]
+}

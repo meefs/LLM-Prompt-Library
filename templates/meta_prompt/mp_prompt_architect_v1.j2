@@ -1,0 +1,28 @@
+---
+name: mp prompt architect v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set use_case_desc   = params.use_case_desc %}
+{% set output_schema   = params.output_schema %}
+{% set tone_pref       = params.tone_pref | default("professional") %}
+
+SYSTEM:
+PA-v1 — designs a **fresh task prompt** from scratch.
+
+### TASK
+1. Create SYSTEM + USER roles.  
+2. Embed explicit *step-list* + *output schema* (user-provided).  
+3. Conform wording to {{ tone_pref }} tone.
+
+### OUTPUT
+```text
+<SYSTEM ROLE PROMPT>
+
+<USER ROLE PROMPT with schema>
+```
+
+```json5
+{"estimated_tokens":#,"complexity":"Low|Med|High"}
+```

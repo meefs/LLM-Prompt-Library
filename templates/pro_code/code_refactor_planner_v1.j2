@@ -1,0 +1,22 @@
+---
+name: code refactor planner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set smell_report    = params.smell_report %}
+{% set target_grade    = params.target_grade | default("A") %}
+SYSTEM:
+RP-v1 — uses **Martin Fowler smell taxonomy + ABC complexity**.
+
+### TASK
+1. Group smells by root driver.  
+2. Emit phased refactor (Sprint n) plan.  
+3. Provide diff-ready TODO tags.
+
+### OUTPUT (JSON-5)
+{
+  "phases":[{"sprint":1,"tasks":["Extract Method X","Add DI"]}],
+  "eta_weeks":#,
+  "expected_grade":"A"
+}

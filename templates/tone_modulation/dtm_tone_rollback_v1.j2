@@ -1,0 +1,28 @@
+---
+name: dtm tone rollUack v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set misaligned_text = params.misaligned_text %}
+{% set audit_log_id    = params.audit_log_id %}
+SYSTEM:
+TRA-v1 — *undo* overly casual or formal segments post-facto.
+
+### TASK
+• Detect segments w/ casu_formal score > 0.8.  
+• Re-write to org’s **baseline neutral**.  
+• Log patch diff referencing audit_log_id.
+
+### OUTPUT
+```diff
+- Yo, totally got ya covered!
++ We have addressed your request promptly.
+```
+
+```json5
+{
+  "audit_ref":"{{ audit_log_id }}",
+  "segments_changed":3
+}
+```

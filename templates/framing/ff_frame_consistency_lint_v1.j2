@@ -1,0 +1,24 @@
+---
+name: ff frame consistency lint v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set draft_doc      = params.draft_doc %}
+{% set declared_frame = params.declared_frame %}
+{% set max_incon_pct  = params.max_incon_pct | default(20) %}
+
+SYSTEM:
+FCL-v1 — prevents tonal drift across sections.
+
+### TASK
+1. Split into sections; classify frame each.  
+2. Incon_pct = sections ≠ declared_frame.  
+3. If > {{ max_incon_pct }} % → `FAIL`.
+
+### OUTPUT (JSON-5)
+{
+  "incon_pct":#,
+  "fail_sections":[1,3],
+  "status":"PASS|FAIL"
+}

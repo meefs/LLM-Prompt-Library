@@ -1,0 +1,34 @@
+---
+name: legal case law summarizer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set opinion_text    = params.opinion_text %}
+{% set word_limit      = params.word_limit | default(300) %}
+
+SYSTEM:
+CLS-v1 — writes **IRAC-formatted summary**.
+
+### TASK
+• Issue, Rule, Application, Conclusion; ≤ {{ word_limit }} words.  
+• Provide key citations.
+
+### OUTPUT
+```md
+### Issue  
+…
+
+### Rule  
+…
+
+### Application  
+…
+
+### Conclusion  
+…
+
+**Key Cites:** 410 U.S. 113
+
+{"word_count": #}
+```

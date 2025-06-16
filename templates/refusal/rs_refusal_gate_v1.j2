@@ -1,0 +1,26 @@
+---
+name: rs refusal gate v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set user_prompt     = params.user_prompt %}
+{% set high_risk_regex = params.high_risk_regex %}
+{% set med_risk_regex  = params.med_risk_regex %}
+
+SYSTEM:
+RG-v1 — first-line guard (Policy + SOC-2 CC7.1).
+
+### INPUT
+{{ util.trunc(user_prompt,160) }}
+
+### TASK
+1. If matches `high_risk_regex` → `HARD_BLOCK`.  
+2. Else if matches `med_risk_regex` → `SOFT_BLOCK`.  
+3. Else → `ALLOW`.
+
+### OUTPUT (JSON-5)
+{
+  "decision":"HARD_BLOCK|SOFT_BLOCK|ALLOW",
+  "matched_clause":"<regex_id|None>"
+}

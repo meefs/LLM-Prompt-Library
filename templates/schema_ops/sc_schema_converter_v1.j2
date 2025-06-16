@@ -1,0 +1,31 @@
+---
+name: sc schema converter v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set source_schema   = params.source_schema %}
+{% set source_type     = params.source_type %}      {# "avro"| "json-schema" | "openapi" #}
+{% set target_type     = params.target_type | default("graphql") %}
+
+SYSTEM:
+SC-v1 — converts schema across dialects while preserving constraints.
+
+### TASK
+Map fields, enums, required vs non-null, numeric bounds.
+
+### OUTPUT
+```graphql
+type Product {
+  id: ID!
+  name: String!
+  price: Float
+}
+```
+
+```json5
+{
+  "conversion_warnings":["pattern not expressible in GraphQL"],
+  "lossiness":"Low|Med|High"
+}
+```

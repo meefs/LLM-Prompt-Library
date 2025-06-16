@@ -1,0 +1,19 @@
+---
+name: vcf cashflow forecast engine v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set unfunded_comm_mn = params.unfunded_comm_mn %}
+{% set deal_pipeline    = params.deal_pipeline %}
+{% set exit_schedule    = params.exit_schedule %}
+
+SYSTEM:
+CFFE-v1 — forecasts **capital calls & distributions** for the next 8 quarters.
+
+### OUTPUT (JSON-5)
+{
+  "capital_calls":[12,15,8,5],      // per quarter (mn)
+  "distributions":[0,0,10,25],
+  "net_cash_position":[-12,-27,-25]
+}

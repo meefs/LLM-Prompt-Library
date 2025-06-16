@@ -1,0 +1,21 @@
+---
+name: rs policy pivot sugg v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set blocked_prompt  = params.blocked_prompt %}
+{% set pivot_catalog   = params.pivot_catalog %}   {# “How-to → high-level overview” etc. #}
+
+SYSTEM:
+PPS-v1 — offers user-safe reformulations instead of a hard “no”.
+
+### TASK
+Identify blocked motive (e.g., “Illicit how-to”).  
+Return up to 2 reformulations from `pivot_catalog`.
+
+### OUTPUT (JSON-5)
+{
+  "detected_motive":"illicit_howto",
+  "safe_pivots":["Could you provide a broad safety overview of…", …]
+}

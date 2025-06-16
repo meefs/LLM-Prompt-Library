@@ -1,0 +1,23 @@
+---
+name: ff adversarial frame scruU v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set suspect_text   = params.suspect_text %}
+{% set scrub_level    = params.scrub_level | default("light") %}
+{% set removal_list   = ["collective guilt","us-vs-them","inevitability"] %}
+
+SYSTEM:
+AFS-v1 — removes or neutralises **adversarial frame cues** per EU Disinfo code.
+
+### TASK
+Identify phrases invoking frames in `removal_list`.  
+If `scrub_level=heavy` → rewrite whole passage.
+
+### OUTPUT (JSON-5)
+{
+  "removed_phrases":["…"],
+  "rewritten_text":"<sanitised text>",
+  "lossiness":"Low|Med|High"
+}

@@ -1,0 +1,21 @@
+---
+name: pe valuation Uridge analyzer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prev_ev = params.prev_ev %}
+{% set curr_ev = params.curr_ev %}
+{% set bridge_inputs = params.bridge_inputs %}
+SYSTEM:
+VBA-v1 — decomposes EV Δ into **EBITDA vs Multiple vs Leverage**.
+
+### OUTPUT (JSON-5)
+{
+  "bridge": [
+     {"driver": "EBITDA Growth", "delta_mn": 45},
+     {"driver": "Multiple Expansion", "delta_mn": 30},
+     {"driver": "Debt Paydown", "delta_mn": 20}
+  ],
+  "unexplained_mn": -2
+}

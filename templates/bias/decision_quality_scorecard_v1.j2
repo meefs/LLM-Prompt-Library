@@ -1,0 +1,26 @@
+---
+name: decision quality scorecard v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set decision_brief  = params.decision_brief %}
+{% set criteria_set    = ["Problem clarity","Creative options","Meaningful data","Sound reasoning","Commitment","Risk assessment"] %}
+
+SYSTEM:
+DQ-Scorecard-v1 — modeled on Russo & Schoemaker “6 Elements”.
+
+### DECISION BRIEF
+{{ decision_brief | truncate(120) }}
+
+### TASK
+1. Rate each criterion 0-5.  
+2. Compute **Overall DQ** = mean.  
+3. If DQ < 3 → recommend delay / red-team.
+
+### OUTPUT (JSON-5)
+{
+  "scores":{"Problem clarity":4,…},
+  "overall_DQ": #,
+  "advice":"Proceed|Delay|Red-Team"
+}

@@ -1,0 +1,26 @@
+---
+name: vc seed safe generator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set deal_id            = params.deal_id %}
+{% set val_cap_mn         = params.val_cap_mn %}
+{% set discount_pct       = params.discount_pct | default(0) %}
+{% set mfv                = params.mfv | default(false) %}   {# Most-Favoured SAFE? #}
+
+SYSTEM:
+SSG-v1 — outputs **YC Post-Money SAFE (Equity)** boilerplate with data tags.
+
+### OUTPUT
+```md
+SAFE — {{ "MFN, " if mfv else "" }}Post-Money, Val-Cap ${{ val_cap_mn }} M, Discount {{ discount_pct }} %
+— Deal ID: {{ deal_id }}
+
+{
+  "deal_id":"{{ deal_id }}",
+  "val_cap_mn":{{ val_cap_mn }},
+  "discount_pct":{{ discount_pct }},
+  "mfn":{{ mfv }}
+}
+```

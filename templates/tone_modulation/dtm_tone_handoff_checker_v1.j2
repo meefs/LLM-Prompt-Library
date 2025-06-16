@@ -1,0 +1,24 @@
+---
+name: dtm tone handoff checker v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set last_agent_resp = params.last_agent_resp %}
+{% set new_agent_resp  = params.new_agent_resp %}
+{% set tolerance_pct   = params.tolerance_pct | default(20) %}
+
+SYSTEM:
+THC-v1 — ensures multi-agent consistency (e-mail threads, chatbot → human).
+
+### TASK
+1. Profile tone for both responses (use TP logic).  
+2. Δ = Σ|tones_new – tones_last|.  
+3. If Δ > {{ tolerance_pct }} pp → `MISMATCH`.
+
+### OUTPUT (JSON-5)
+{
+  "delta_pct": #,
+  "status":"OK|MISMATCH",
+  "adjustment_hint":"Add reassurance phrase…"
+}

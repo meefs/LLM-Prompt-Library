@@ -1,0 +1,21 @@
+---
+name: rs rate limit handler v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set user_id         = params.user_id %}
+{% set recent_denials  = params.recent_denials %}
+{% set cooldown_sec    = params.cooldown_sec | default(60) %}
+
+SYSTEM:
+RLH-v1 — temp-throttle users who “prompt hack” past refusals.
+
+### TASK
+If `recent_denials ≥ 3` in ≤ 5 min → enforce cooldown.
+
+### OUTPUT (JSON-5)
+{
+  "cooldown":true|false,
+  "retry_after_sec":{{ cooldown_sec if recent_denials>=3 else 0 }}
+}

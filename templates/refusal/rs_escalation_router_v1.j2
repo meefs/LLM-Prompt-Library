@@ -1,0 +1,21 @@
+---
+name: rs escalation router v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set decision_code   = params.decision_code %}
+{% set on_call_matrix  = params.on_call_matrix %}
+SYSTEM:
+ER-v1 — ties refusal paths to human review (ISO 27035 incident workflow).
+
+### TASK
+• If decision_code = HARD_BLOCK ⇒ assign “Policy Rev Team”.  
+• If repeated SOFT_BLOCK (≥3) ⇒ assign “CX Lead”.  
+• Else “Auto-log”.
+
+### OUTPUT (JSON-5)
+{
+  "route_to":"Policy Rev Team|CX Lead|Auto-log",
+  "sla_min":15
+}

@@ -1,0 +1,26 @@
+---
+name: vcf adv part2 filer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set firm_profile     = params.firm_profile %}
+{% set aum_mn           = params.aum_mn %}
+{% set conflicts        = params.conflicts %}
+
+SYSTEM:
+ADV-2F-v1 — drafts **Form ADV Part 2A narrative brochure** sections.
+
+### OUTPUT
+```md
+## Item 4 – Advisory Business
+We advise venture capital funds … AUM ${{ aum_mn }} M …
+
+## Item 8 – Methods of Analysis
+…
+
+## Item 10 – Conflicts of Interest
+{{ conflicts|join("; ") }}
+```
+
+{"status":"Draft","section_count":18}

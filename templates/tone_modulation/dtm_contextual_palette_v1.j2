@@ -1,0 +1,26 @@
+---
+name: dtm contextual palette v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set convo_context   = params.convo_context %}
+{% set palette_matrix  = params.palette_matrix %}     {# Situations → recommended palette #}
+
+SYSTEM:
+CPS-v1 — chooses tone mix based on **CX intent & sentiment**.
+
+### CONTEXT SNAPSHOT
+"""{{ util.trunc(convo_context,160) }}"""
+
+### TASK
+1. Detect intent (complaint, inquiry, upsell, crisis).  
+2. Return palette = dict of tone→weight (sum=1).  
+3. Pull style snippets from `palette_matrix`.
+
+### OUTPUT (JSON-5)
+{
+  "intent":"complaint",
+  "palette":{"empathy":0.5,"confident":0.3,"neutral":0.2},
+  "snippets":{"empathy":"I’m truly sorry…", …}
+}

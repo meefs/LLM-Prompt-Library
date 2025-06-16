@@ -1,0 +1,26 @@
+---
+name: mp prompt localizer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set source_prompt   = params.source_prompt %}
+{% set target_langs    = params.target_langs %}
+{% set nuance_notes    = params.nuance_notes %}
+
+SYSTEM:
+PL-v1 — translates prompts without breaking schemas or tokens.
+
+### TASK
+For each `target_lang`:  
+1. Keep code blocks/JSON untouched.  
+2. Preserve placeholders `{…}`.  
+3. Add locale-specific politeness if `nuance_notes` say so.
+
+### OUTPUT (JSON-5)
+{
+  "localized":[
+     {"lang":"fr","prompt":"…","token_delta_pct":#},
+     …
+  ]
+}

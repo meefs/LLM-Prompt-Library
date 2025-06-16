@@ -1,0 +1,13 @@
+---
+name: util refusal macros
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% macro trunc(txt, n=120) -%}
+{{ txt|replace('\n',' ')|truncate(n,True,'…') }}
+{%- endmacro %}
+
+{% macro sha256(obj) -%}
+{{ hashlib.sha256(obj.encode()).hexdigest() }}
+{%- endmacro %}

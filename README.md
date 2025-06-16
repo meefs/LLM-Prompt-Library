@@ -1,83 +1,64 @@
-# LLM Prompt Library
+# LLM Prompt Library
 
-[![GitHub stars](https://img.shields.io/github/stars/abilzerian/LLM-Prompt-Library?style=for-the-badge)](../../stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/abilzerian/LLM-Prompt-Library?style=for-the-badge)](../../network/members)
+[![GitHub stars](https://img.shields.io/github/stars/abilzerian/LLM-Prompt-Library?style=for-the-badge)](../../stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/abilzerian/LLM-Prompt-Library?style=for-the-badge)](../../network/members)
 [![Issues](https://img.shields.io/github/issues/abilzerian/LLM-Prompt-Library?style=for-the-badge)](../../issues)
-[![CI](https://img.shields.io/github/actions/workflow/status/abilzerian/LLM-Prompt-Library/ci.yml?branch=main&style=for-the-badge)](../../actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-informational?style=for-the-badge)](LICENSE)
-[![Discord](https://img.shields.io/discord/1051259432199266374?style=for-the-badge&logo=discord)](https://discord.gg/chatgpt-prompt-engineering-1051259432199266374)
-[![Twitter Follow](https://img.shields.io/twitter/follow/alexbilz?style=for-the-badge)](https://x.com/alexbilz)
+[![License: MIT](https://img.shields.io/badge/License-MIT-informational?style=for-the-badge)](LICENSE)
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?lines=Prompt+Engineering+Library;18%2C000%2B+AI+Practitioners;Reusable+LLM+Templates;Multi‑Model+Support&font=Fira%20Code&center=true&width=520&height=45&duration=4000&pause=1000">
-</div>
+> **Production-ready prompt templates for every major LLM.**
 
-<p align="center">
-  <a href="https://openai.com"><img src="https://img.shields.io/badge/GPT_o3-Optimized-brightgreen?style=flat-square" alt="GPT o3"></a>
-  <a href="https://www.anthropic.com/claude"><img src="https://img.shields.io/badge/Claude_3-Opus-purple?style=flat-square" alt="Claude 3 Opus"></a>
-  <a href="https://ai.meta.com/llama/"><img src="https://img.shields.io/badge/Llama_3-Enhanced-orange?style=flat-square" alt="Llama 3"></a>
-  <a href="https://gemini.google.com"><img src="https://img.shields.io/badge/Gemini-Supported-red?style=flat-square" alt="Gemini"></a>
-</p>
-
-> **Battle‑tested prompt templates & dev‑scripts for every major LLM.**
-  
----
-
-## ✨ Prompt catalogue (live)
-
-<!-- AUTO‑GENERATED: updated by scripts/build_index.py – do **not** edit manually -->
-| Category | Prompts | Example links |
-| -------- | ------: | ------------- |
-| Creative Writing | **2** | [Dialogue Generator](prompts/creative_writing/Dialogue_Generator.md) • [Storyteller](prompts/creative_writing/Storyteller.md) |
-| Finance | **2** | [10-K Analyzer](prompts/finance/10-KAnalyzer.md) • [Act as a venture capitalist](prompts/finance/venturecapitalist.md) |
-| Healthcare | **1** | [Symptom Checker](prompts/healthcare/Symptom_Checker.md) |
-| Legal | **2** | [Case Law Finder](prompts/legal/Case_Law_Finder.md) • [Legal Contract Reviewer](prompts/legal/Legal_Contract_Reviewer.md) |
-| Marketing | **2** | [Ad Copy Generator](prompts/marketing/Ad_Copy_Generator.md) • [Social Media Post Optimizer](prompts/marketing/Social_Media_Post_Optimizer.md) |
-| Medical | **3** | [Clinical Trial Analyzer](prompts/medical/Clinical_Trial_Analyzer.md) • [Cognitive Bias Assessment Tool](prompts/medical/Cognitive%20Bias%20Assessment%20Tool.md) |
-| Miscellaneous | **8** | [ChatAGI](prompts/miscellaneous/ChatAGI.md) • [Code Anything Now](prompts/miscellaneous/Code%20Anything%20Now.md) |
-| Programming | **17** | [AWS Architect](prompts/programming/AWS%20Architect.md) • [Azure Architect](prompts/programming/Azure%20Architect.md) |
-| Prompt Generation | **7** | [CoT_Probe_o3](prompts/prompt_generation/CoT_Probe_o3.md) • [DALL-E](prompts/prompt_generation/DALL-E.md) |
-| Sales | **1** | [Sales Email Drafter](prompts/sales/Sales_Email_Drafter.md) |
-| Writing & Editing | **14** | [Preserve Technical Terminology](prompts/writing_editing/editing_revision/Preserve%20Technical%20Terminology.md) • [Proofread](prompts/writing_editing/editing_revision/Proofread.md) |
-| **Total** | **59** | — |
-<!-- /AUTO‑GENERATED -->
-
-> 📖 Full list lives in [`prompts/INDEX.md`](prompts/INDEX.md) — rebuilt on every commit.
-
----
-
-## 🚀 Quick start
+## 🚀 Quick Start
 
 ```bash
 git clone https://github.com/abilzerian/LLM-Prompt-Library.git
 cd LLM-Prompt-Library
 
-# helper scripts
-pip install -r scripts/requirements.txt
+# Browse community prompts
+ls prompts/
 
-# install hook to auto-update the prompt catalogue
-pip install pre-commit
-pre-commit install
-
-# manual rebuild (usually handled by pre‑commit/CI)
-python scripts/build_index.py
+# Use enterprise templates  
+ls templates/
 ```
-<sub>Need a demo or enterprise implementation? Contact <a href="https://x.com/alexbilz">Alex Bilzerian</a></sub>
 
+## 📚 What's Inside
+
+### 🏢 Enterprise Templates (`templates/`)
+**164 production-grade Jinja2 templates** with regulatory compliance:
+
+| Suite | Purpose | Standards |
+|-------|---------|-----------|
+| **Finance** | Risk, capital, liquidity | Basel III/IV, FRTB, IFRS 9 |
+| **Private Equity** | LBO models, ESG tracking, waterfalls | ILPA DDQ 2024, IFRS 13 |
+| **Venture Capital** | Fund reporting, carry, cash-flow forecasting | ILPA Reporting 3.0 |
+| **Legal** | Contract analysis, privacy impact | GDPR, CCPA, HIPAA |
+| **Medical** | Clinical decision support, FHIR validation | HL7 FHIR, ICD-10 |
+| **Pro Code** | Code review, bug explanation, refactoring | OWASP ASVS |
+| **AI Research** | Benchmarking, experiment design | Statistical rigor |
+| **Governance** | Policy compliance, risk assessment | SOX, COSO |
+
+### 🌍 Community Prompts (`prompts/`)
+**60+ curated prompts** organized by domain:
+
+| Category | Count | Examples |
+|----------|-------|----------|
+| Programming | 17 | Python, AWS, Code Review |
+| Writing | 14 | Proofreading, Summarization |
+| Miscellaneous | 8 | Red-teaming, Adventures |
+| Meta | 7 | Prompt engineering, DALL-E |
+| Finance | 3 | 10-K Analysis, VC |
+| Medical | 5 | Clinical trials, diagnostics |
+| Legal | 2 | Case law, contracts |
+| Marketing | 2 | Ad copy, social media |
+| Sales | 1 | Email drafting |
+| Creative | 2 | Storytelling, dialogue |
+
+## 🏗️ Usage
+
+Copy any `.j2` template that fits your need, fill in the `params` values (or edit the inline `{{ placeholders }}`), then send the rendered prompt to your LLM.  
+No external Python libraries or template loaders are required.
 ⸻
 
-The library includes several tools to help you work with prompts:
-
-- **🔍 Prompt Validator** - Validates the format and contents of prompt files to ensure they meet our standards.
-- **🔄 Prompt Mixer** - Create new prompts by mixing and matching elements from existing prompts.
-- **🔢 Token Counter** - Analyze prompt files to count tokens and estimate API costs.
-- **📊 Prompt Analyzer** - Evaluate the quality of prompts and get suggestions for improvements.
-- **🔄 Prompt Evolution** - Automatically optimize prompts through iterative self-improvement cycles.
-- **💰 Financial Metacognition** - Analyze AI interpretations of financial prompts to detect biases and limitations.
-
-⸻
-
-📊 Community & stats
+## 📊 Community & Stats
 
 <p align="center">
   <picture>
@@ -86,12 +67,8 @@ The library includes several tools to help you work with prompts:
   </picture>
 </p>
 
-⸻
+---
 
-📄 License
-
-Distributed under the MIT License — see the full text in LICENSE.
-
-<div align="right">
-  <sub>© 2025 | Maintained by <a href="https://x.com/alexbilz">Alex Bilzerian</a></sub>
+<div align="center">
+  <sub>© 2025 | Created by <a href="https://x.com/alexbilz">Alex Bilzerian</a></sub>
 </div>

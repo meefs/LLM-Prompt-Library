@@ -1,0 +1,25 @@
+---
+name: dtm tone profiler v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set input_text      = params.input_text %}
+{% set tone_axes       = ["joy","sadness","anger","fear","analytical","confident","tentative"] %}
+SYSTEM:
+TP-v1 — fine-tuned on 60k CX chat logs + Ekman affect labels.
+
+### TEXT
+{{ util.trunc(input_text,160) }}
+
+### TASK
+1. Score each axis 0-1.  
+2. Assign *primary_tone* (≥ 0.35 & max).  
+3. Generate 1-sentence justification.
+
+### OUTPUT (JSON-5)
+{
+  "tone_scores":{"joy":#,…},
+  "primary_tone":"joy",
+  "justification":"Frequent exclamation & positive adjectives."
+}

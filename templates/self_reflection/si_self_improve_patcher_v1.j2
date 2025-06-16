@@ -1,0 +1,23 @@
+---
+name: si self improve patcher v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set failure_modes   = params.failure_modes %}
+{% set current_prompt  = params.current_prompt %}
+{% set patch_budget    = params.patch_budget | default(2) %}
+
+SYSTEM:
+SIP-v1 — proposes prompt edits to avoid repeated failure-modes.
+
+### TASK
+Suggest ≤ {{ patch_budget }} JSON patches (RFC-6902) ranked by impact.
+
+### OUTPUT (JSON-5)
+{
+  "patches":[
+     {"rank":1,"op":"add","path":"/system/0","value":"When uncertain, ask…"},
+     …
+  ]
+}

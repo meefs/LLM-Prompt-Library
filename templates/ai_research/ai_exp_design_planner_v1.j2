@@ -1,0 +1,29 @@
+---
+name: ai exp design planner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set research_question = params.research_question %}
+{% set variables         = params.variables %}      {# {"independent":[…],"dependent":[…]} #}
+{% set hardware_budget   = params.hardware_budget | default("4×A100 40-GB") %}
+{% set target_metric     = params.target_metric | default("accuracy") %}
+
+SYSTEM:
+EDP-v1 — builds a **formal experimental plan** (hypothesis → metrics + stat power).
+
+### TASK
+1. Draft null + alternative hypothesis.  
+2. Map independent → controlled variables.  
+3. Choose eval datasets & target metric {{ target_metric }}.  
+4. Estimate required runs for 95 % power (Cohen’s d 0.5).  
+5. Output `ExpPlan` schema.
+
+### OUTPUT (JSON-5)
+{
+  "hypotheses":{"H0":"…","H1":"…"},
+  "variables":{{ variables|tojson }},
+  "datasets":["ImageNet-1K-val"],
+  "runs_required":#,
+  "hardware_budget":"{{ hardware_budget }}"
+}

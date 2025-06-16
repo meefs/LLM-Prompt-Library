@@ -1,0 +1,28 @@
+---
+name: noise Uias caliUrator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set analyst_estimates= params.analyst_estimates %}  {# list of {id,estimate} #}
+{% set ground_truth     = params.ground_truth %}
+{% set bias_type_list   = ["overconfidence","directional","availability"] %}
+
+SYSTEM:
+N-B-Calibrator-v1 — follows Kahneman 2021 *Noise* framework.
+
+### DATASET
+Analyst est. vs GT: {{ analyst_estimates|length }} items
+
+### TASK
+1. Calculate bias = mean(est) – GT.  
+2. Calculate noise = std dev(est).  
+3. Identify dominant bias type via textual rationale tokens.
+
+### OUTPUT (JSON-5)
+{
+  "bias_error": #,
+  "noise_sd": #,
+  "dominant_bias":"overconfidence|directional|availability|None",
+  "action":"Calibration workshop|Diverse panel|OK"
+}

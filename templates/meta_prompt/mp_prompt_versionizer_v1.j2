@@ -1,0 +1,29 @@
+---
+name: mp prompt versionizer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set old_prompt      = params.old_prompt %}
+{% set new_prompt      = params.new_prompt %}
+{% set semver_rule     = "MAJOR|MINOR|PATCH" %}
+SYSTEM:
+PV-v1 — bumps semantic version & changelog diff.
+
+### TASK
+1. Compute unified diff.  
+2. Decide SemVer bump rule.  
+3. Return new version & markdown changelog snippet.
+
+### OUTPUT
+```diff
+{{ diff_block }}
+```
+
+```json5
+{
+  "new_version":"1.2.0",
+  "change_type":"MINOR",
+  "changelog":"* Added explicit JSON schema…"
+}
+```

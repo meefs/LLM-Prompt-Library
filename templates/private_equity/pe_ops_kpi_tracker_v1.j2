@@ -1,0 +1,22 @@
+---
+name: pe ops kpi tracker v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set portfolio_kpis = params.portfolio_kpis %}
+{% set target_benchmarks = params.target_benchmarks %}
+SYSTEM:
+OKT-v1 — maps **value-creation plan** to weekly KPI deltas.
+
+### TASK
+1. For each company compute Δ vs YoY & target.
+2. Flag red (< 90 % of target) & green (> 110 %).
+
+### OUTPUT (JSON-5)
+{
+  "kpi_board": [
+     {"co": "Bolt Logistics", "kpi": "Gross Margin", "actual": 32, "target": 35, "status": "amber"}
+  ],
+  "red_flags": [{"co": "Bolt Logistics", "kpi": "Churn Rate"}]
+}

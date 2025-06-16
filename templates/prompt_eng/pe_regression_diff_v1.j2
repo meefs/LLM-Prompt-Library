@@ -1,0 +1,28 @@
+---
+name: pe regression diff v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set old_prompt    = params.old_prompt %}
+{% set new_prompt    = params.new_prompt %}
+{% set diff_block    = params.diff_block | default("<DIFF_PLACEHOLDER>") %}
+
+SYSTEM:
+PE-Reg-Diff-v1 — highlights functional deltas; prevents silent regression.
+
+### TASK
+1. Produce unified diff (-/+).  
+2. Detect breaking changes (schema fields removed, role instructions flipped).
+
+### OUTPUT
+```diff
+{{ diff_block }}
+```
+
+```json5
+{
+  "breaking_changes":["Removed field `confidence`","System role softened"],
+  "risk_level":"High|Med|Low"
+}
+```

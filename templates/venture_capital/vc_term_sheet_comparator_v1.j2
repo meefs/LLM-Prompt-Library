@@ -1,0 +1,21 @@
+---
+name: vc term sheet comparator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set ts_a              = params.ts_a %}
+{% set ts_b              = params.ts_b %}
+{% set compare_fields    = ["valuation","liquidation","board","anti_dilution","drag","pro_rata"] %}
+
+SYSTEM:
+TSC-v1 — side-by-side diff with *materiality coloring*.
+
+### OUTPUT (JSON-5)
+{
+  "differences":[
+     {"field":"valuation","a":"$12 M pre","b":"$15 M pre","impact":"founder dilution 4 pp"},
+     {"field":"anti_dilution","a":"full ratchet","b":"broad-based","impact":"High"}
+  ],
+  "better_for_founders":"Term-Sheet B"
+}

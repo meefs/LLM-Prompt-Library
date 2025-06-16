@@ -1,0 +1,27 @@
+---
+name: pe auto refiner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set failing_cases   = params.failing_cases %}
+{% set base_prompt     = params.base_prompt %}
+{% set improve_budget  = params.improve_budget | default(3) %}
+
+SYSTEM:
+PE-Auto-Refine-v1 — iteratively patches prompt until failing-case pass.
+
+### FAILING CASES
+{{ failing_cases|length }} total.
+
+### TASK
+Suggest ≤ {{ improve_budget }} prompt edits ranked by expected fix rate.
+
+### OUTPUT (JSON-5)
+{
+  "edits":[
+     {"rank":1,"patch":"Replace vague 'summarize' with rubric xyz"},
+     …
+  ],
+  "estimated_recovery_pct": #
+}

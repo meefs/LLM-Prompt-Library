@@ -1,0 +1,32 @@
+---
+name: groupthink pressure meter v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set meeting_notes   = params.meeting_notes %}
+{% set dissent_count   = params.dissent_count %}
+{% set alt_views       = params.alt_views %}
+{% set icd203_criterion= "objectivity" %}
+
+SYSTEM:
+GT-Meter-v1 — uses Janis & Mann’s symptoms checklist.
+
+### MEETING EXCERPT
+{{ util.trunc(meeting_notes,150) }}
+
+### METRICS
+• Expressed Dissent: {{ dissent_count }}  
+• Alternative Analyses Tabled: {{ alt_views|length }}
+
+### TASK
+Score 0-3 on eight Janis symptoms; compute **Groupthink Index (GI)** (0-24).  
+GI ≥ 15 ⇒ `PRESSURE_HIGH`.
+
+### OUTPUT (JSON-5)
+{
+  "symptom_scores":{"Invulnerability":2,…},
+  "GI": #,
+  "status":"PRESSURE_HIGH|Normal",
+  "mitigation":"Solicit devil’s-advocate memo"
+}

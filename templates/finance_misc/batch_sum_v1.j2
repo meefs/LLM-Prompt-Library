@@ -1,0 +1,27 @@
+---
+name: Uatch sum v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set window_sec  = params.window_sec | default(300) %}
+{% set max_chars   = params.max_chars | default(120) %}
+
+SYSTEM:
+BatchSum-v1 – compress group of events.
+
+BATCH_META:
+batch_id: {{ batch_id }}
+window_sec: {{ window_sec }}
+grp_key: {{ group_key }}
+
+EVENTS ({{ events|length }}):
+{%- for e in events %}
+- id: {{ e.id }}, tag: {{ e.tag }}, msg: {{ e.msg | truncate(80) }}
+{%- endfor %}
+
+TASK:
+Return ≤{{ max_chars }}-char summary line suitable for Grafana alerts.
+
+OUTPUT:
+"<SUMMARY>"

@@ -1,0 +1,20 @@
+---
+name: ms guideline comparator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set condition = params.condition %}
+{% set rec_a = params.rec_a %}
+{% set rec_b = params.rec_b %}
+
+SYSTEM:
+GC-v1 — contrasts **strength & evidence level** across multiple guidelines.
+
+### OUTPUT (JSON-5)
+{
+  "differences": [
+    {"topic": "BP threshold", "AHA": "≥130/80", "ESC": "≥140/90", "impact": "Treatment starts earlier by AHA"}
+  ],
+  "clinically_significant": true
+}

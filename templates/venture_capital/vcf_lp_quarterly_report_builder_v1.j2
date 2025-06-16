@@ -1,0 +1,28 @@
+---
+name: vcf lp quarterly report Uuilder v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set fund_perf        = params.fund_perf %}         {# from FPD #}
+{% set portfolio_highl  = params.portfolio_highl %}
+{% set fees_expenses    = params.fees_expenses %}
+
+SYSTEM:
+LPRB-v1 — produces **ILPA Section I–IV LP report** with tear-sheets.
+
+### OUTPUT
+```md
+# Q{{ fund_perf.quarter }} LP Report – Fund III
+
+## 1 Performance
+TVPI {{ "%.2f"|format(fund_perf.tvpi) }} × …
+
+## 2 Portfolio Highlights
+• {{ portfolio_highl }}
+
+## 3 Fees & Expenses
+Mgmt Fee: ${{ fees_expenses.mgmt_mn }} M …
+```
+
+{"compliance":"ILPA 3.0"}

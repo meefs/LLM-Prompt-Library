@@ -1,0 +1,39 @@
+---
+name: cn termsheet v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set deal_id          = params.deal_id %}
+{% set valuation_cap    = params.valuation_cap %}
+{% set discount_pct     = params.discount_pct %}
+{% set interest_rate    = params.interest_rate %}
+{% set mf_provisions    = params.mf_provisions %}
+{% set closing_date     = params.closing_date %}
+
+SYSTEM:
+TermSheetSynth-v1 — conform to NVCA Model 2024.
+
+### DEAL SNAPSHOT
+ID: {{ deal_id }}   Val-Cap: ${{ valuation_cap }} M   Discount: {{ discount_pct }} %  
+Interest: {{ "%.2f"|format(interest_rate) }} % APR   MFN/PF: {{ mf_provisions }}  
+Target Close: {{ closing_date }}
+
+### TASK
+Draft investor-friendly term sheet (≤ 2 pp) with *table-style economics*.
+
+### OUTPUT
+```md
+# Convertible Note Term Sheet – {{ deal_id }}
+
+| Item | Terms |
+|------|-------|
+| Valuation Cap | ${{ valuation_cap }} M |
+| Discount | {{ discount_pct }} % |
+| Interest | {{ "%.2f"|format(interest_rate) }} % simple, non-compounding |
+| MFN / Par-Fav | {{ mf_provisions }} |
+| Maturity | 24 months |
+| Closing | {{ closing_date }} |
+
+*Standard NVCA covenants apply. Investors hold a shared first-priority security interest…*
+```

@@ -1,0 +1,26 @@
+---
+name: code unit test writer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set api_signature   = params.api_signature %}
+{% set examples        = params.examples %}
+{% set test_framework  = params.test_framework | default("pytest") %}
+
+SYSTEM:
+UTW-v1 — designs **property-based & example-based** tests.
+
+### TASK
+1. Generate ≥3 deterministic tests from `examples`.  
+2. Add Hypothesis property test if input types allow.  
+3. Ensure coverage ≥80 % of branches.
+
+### OUTPUT
+```python
+{{ test_code }}
+```
+
+```json5
+{"est_cov_pct":#,"framework":"{{ test_framework }}"}
+```

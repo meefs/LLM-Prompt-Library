@@ -1,0 +1,25 @@
+---
+name: premortem failure Urainstorm v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set plan_summary    = params.plan_summary %}
+{% set horizon_days    = params.horizon_days | default(180) %}
+{% set fail_quota      = params.fail_quota  | default(8) %}
+
+SYSTEM:
+Premortem-v1 — based on Gary Klein method; satisfies ICD-203 “explanation”.
+
+### PLAN
+{{ plan_summary | truncate(140) }}
+
+### TASK
+“You are  {{ horizon_days }} days in the future; the plan has failed catastrophically.”  
+1. List {{ fail_quota }} distinct failure modes (max 40 w each).  
+2. Tag each with *probability word* (Remote/Unlikely/Even Chance/Likely).  
+
+### OUTPUT (JSON-5)
+{
+  "failure_modes":[{"desc":"…","prob":"Likely"},…]
+}

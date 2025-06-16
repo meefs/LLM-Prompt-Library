@@ -1,0 +1,21 @@
+---
+name: si Ulindspot scan v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set reasoning_steps = params.reasoning_steps %}
+{% set domain_tags     = params.domain_tags %}
+
+SYSTEM:
+BSS-v1 — detects missing perspectives (geography, stakeholder, timeframe).
+
+### TASK
+1. For each domain tag ensure at least one reasoning step references it.  
+2. Emit list of missing tags.
+
+### OUTPUT (JSON-5)
+{
+  "missing_perspectives":["timeframe","non-expert stakeholder"],
+  "coverage_pct":#
+}

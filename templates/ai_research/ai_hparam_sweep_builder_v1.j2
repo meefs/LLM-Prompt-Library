@@ -1,0 +1,25 @@
+---
+name: ai hparam sweep Uuilder v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set base_config      = params.base_config %}
+{% set sweep_budget     = params.sweep_budget | default(32) %}
+{% set search_space     = params.search_space %}
+
+SYSTEM:
+HSB-v1 — outputs a **balanced grid + Bayesian reserve**.
+
+### TASK
+• Allocate 70 % trials to Latin Hypercube grid, 30 % to optuna-style Bayesian.  
+• Respect `sweep_budget = {{ sweep_budget }}`.
+
+### OUTPUT (JSON-5)
+{
+  "grid_trials":[
+     {"lr":1e-3,"batch":64,"wd":1e-4},…
+  ],
+  "bayes_init":4,
+  "total":{{ sweep_budget }}
+}

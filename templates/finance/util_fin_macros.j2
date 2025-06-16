@@ -1,0 +1,9 @@
+---
+name: util fin macros
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% macro trunc(txt, n=100) -%}
+{{ txt|replace('\n',' ')|truncate(n,True,'…') }}
+{%- endmacro %}

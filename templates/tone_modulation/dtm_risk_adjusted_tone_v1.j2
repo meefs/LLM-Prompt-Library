@@ -1,0 +1,23 @@
+---
+name: dtm risk adjusted tone v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set compliance_risk = params.compliance_risk %}  {# Low/Med/High #}
+{% set reputational_risk = params.reputational_risk %}
+{% set base_palette   = {"joy":0.3,"empathy":0.4,"confident":0.3} %}
+
+SYSTEM:
+RATP-v1 — scales tone intensities by risk profile (ISO 31000).
+
+### TASK
+1. risk_factor = max(compliance_risk, reputational_risk).  
+2. Reduce expressive tones (joy/empathy) by 20 % per risk tier above Low.  
+3. Increase neutral/analytical offset.
+
+### OUTPUT (JSON-5)
+{
+  "adjusted_palette":{"joy":#,"empathy":#,"confident":#,"neutral":#},
+  "rationale":"High compliance risk → dampened exuberance."
+}

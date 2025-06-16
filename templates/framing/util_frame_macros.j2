@@ -1,0 +1,9 @@
+---
+name: util frame macros
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% macro trunc(t, n=100) -%}
+{{ t|replace('\n',' ')|truncate(n,True,'…') }}
+{%- endmacro %}

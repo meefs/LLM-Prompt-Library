@@ -1,0 +1,26 @@
+---
+name: ff frame taxonomy v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set input_text     = params.input_text %}
+{% set taxonomy       = ["Security","Morality","Economic","Legitimacy","Victimhood","Patriotism",
+                         "Technocratic","Catastrophic","Human-interest"] %}
+SYSTEM:
+FTC-v1 — maps narrative elements to **Entman frame functions** (problem/causal/moral/solution).
+
+### TEXT
+"""{{ util.trunc(input_text,160) }}"""
+
+### TASK
+1. Extract ≥ 3 key propositions.  
+2. Assign **primary frame** from taxonomy; tag sub-frames.  
+3. Output Entman function mapping.
+
+### OUTPUT (JSON-5)
+{
+  "propositions":[{"text":"…","primary_frame":"Security","sub_frames":["Patriotism"]}],
+  "dominant_frame":"Security",
+  "entman_map":{"problem":"…","cause":"…","moral":"…","solution":"…"}
+}

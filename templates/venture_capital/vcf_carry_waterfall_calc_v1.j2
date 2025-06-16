@@ -1,0 +1,21 @@
+---
+name: vcf carry waterfall calc v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set fund_docs        = params.fund_docs %}         {# hurdle, carry %, catch-up #}
+{% set cash_flows       = params.cash_flows %}
+{% set nav_mn           = params.nav_mn %}
+
+SYSTEM:
+CWC-v1 — computes **LP/GP distributions** through European-style waterfall.
+
+### OUTPUT (JSON-5)
+{
+  "total_profits_mn":#,
+  "preferred_return_hurdle_pct":{{ fund_docs.hurdle }},
+  "lp_distribution_mn":#,
+  "gp_carry_mn":#,
+  "catch_up_triggered":true|false
+}

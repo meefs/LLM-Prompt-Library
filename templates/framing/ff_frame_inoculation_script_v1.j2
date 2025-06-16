@@ -1,0 +1,29 @@
+---
+name: ff frame inoculation script v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set threat_frame   = params.threat_frame %}
+{% set audience_profile = params.audience_profile %}
+{% set dose_style     = params.dose_style | default("light-touch") %}
+
+SYSTEM:
+FISB-v1 — crafts *pre-bunk* scripts (van der Linden 2022).
+
+### TASK
+1. Write ≤ 150-word script: forewarn + refutation + positive reframe.  
+2. Adjust tone to `dose_style`.  
+3. Embed “fact-myth-fallacy-fact” sandwich.
+
+### OUTPUT
+```md
+{{ script_body }}
+```
+
+```json5
+{
+  "read_time_sec":#,
+  "tone":"measured|assertive"
+}
+```

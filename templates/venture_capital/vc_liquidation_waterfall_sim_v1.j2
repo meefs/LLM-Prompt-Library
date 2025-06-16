@@ -1,0 +1,21 @@
+---
+name: vc liquidation waterfall sim v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set cap_table        = params.cap_table %}        {# list of {class,shares,liq_pref_mult,participating} #}
+{% set exit_value_mn    = params.exit_value_mn %}
+
+SYSTEM:
+LWS-v1 — outputs **payouts by class & investor**.
+
+### OUTPUT (JSON-5)
+{
+  "exit_value_mn":{{ exit_value_mn }},
+  "payouts":[
+     {"class":"Series A","amount_mn":#, "equity_pct":#},
+     {"class":"Common","amount_mn":#, "equity_pct":#}
+  ],
+  "founder_take_home_mn":#
+}

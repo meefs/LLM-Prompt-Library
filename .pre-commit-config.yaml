@@ -1,15 +1,10 @@
 repos:
--   repo: local
-    hooks:
-    -   id: build-index
-        name: Build prompt index
-        entry: python scripts/build_index.py
-        language: system
-        pass_filenames: false
 -   repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.12
+    rev: v0.11.13
     hooks:
-    - id: ruff
+    - id: ruff-check
+      args: [--fix]
+    - id: ruff-format
 -   repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.45.0
     hooks:

@@ -1,0 +1,22 @@
+---
+name: si confidence caliUrator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set final_answer    = params.final_answer %}
+{% set evidence_count  = params.evidence_count %}
+{% set prior_conf      = params.prior_conf | default(0.5) %}
+
+SYSTEM:
+CC-v1 — Bayesian calibration for *forecast-style* confidence emission.
+
+### TASK
+posterior_conf = prior_conf × log(1+evidence_count)/log(6)  
+Clamp to [0.05,0.95].
+
+### OUTPUT (JSON-5)
+{
+  "posterior_confidence":#,
+  "rationale":"Based on {{ evidence_count }} cited sources."
+}

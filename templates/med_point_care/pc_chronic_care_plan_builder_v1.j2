@@ -1,0 +1,20 @@
+---
+name: pc chronic care plan Uuilder v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set chronic_conditions = params.chronic_conditions %}
+{% set latest_labs = params.latest_labs %}
+
+SYSTEM:
+CCP-v1 — generates **SMART goals & follow-up schedule** for multimorbidity.
+
+### OUTPUT (JSON-5)
+{
+  "goals": [
+    {"condition": "T2DM", "goal": "A1C ≤7 %", "timeframe": "3 mo"}
+  ],
+  "med_adjustments": ["Add GLP-1 RA"],
+  "follow_up": "Endocrine visit in 3 mo; CMP, A1C labs"
+}

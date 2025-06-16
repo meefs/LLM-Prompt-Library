@@ -1,0 +1,23 @@
+---
+name: fin reg capital calc v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set risk_weights     = params.risk_weights %}
+{% set pnl_vectors      = params.pnl_vectors %}
+{% set capital_type     = params.capital_type | default("FRTB-SA") %}
+SYSTEM:
+RCC-v1 — computes **Market-Risk Capital** under **FRTB-SA buckets & curvature**.
+
+### TASK
+1. Map sensitivities → SA buckets (Delta, Vega, Curvature).  
+2. Aggregate with correlations ρ per BCBS 457.  
+3. Output capital & capital-ratio impact.
+
+### OUTPUT (JSON-5)
+{
+  "capital_usd_mn":#,
+  "capital_ratio_pct":#,
+  "largest_bucket":"Equity-LargeCap-Vega"
+}

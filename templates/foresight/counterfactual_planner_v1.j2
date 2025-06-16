@@ -1,0 +1,32 @@
+---
+name: counterfactual planner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set focal_event     = params.focal_event %}
+{% set pivot_points    = params.pivot_points %}
+{% set icd_words       = ["Almost certainly","Likely","Even chance","Unlikely","Highly unlikely"] %}
+
+SYSTEM:
+CounterF-Planner-v1 — uses Tetlock counterfactual scaffolding.
+
+### FOCAL EVENT
+{{ focal_event }}
+
+### KEY PIVOT POINTS
+{%- for p in pivot_points %}• {{ p }}{% if not loop.last %}\n{% endif %}{%- endfor %}
+
+### TASK
+For each pivot:  
+  A. Describe **Divergent Path** (≤ 40 w).  
+  B. Assign prob word from ICD list.  
+  C. Identify decision actor to influence pivot.
+
+### OUTPUT (JSON-5)
+{
+  "counterfactuals":[
+     {"pivot":"…","path":"…","prob":"Even chance","actor":"…"},
+     …
+  ]
+}

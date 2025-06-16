@@ -1,0 +1,23 @@
+---
+name: dtm emotional range guard v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set stream_msgs     = params.stream_msgs %}
+{% set max_neg_ratio   = params.max_neg_ratio | default(0.4) %}
+
+SYSTEM:
+ERG-v1 — throttles output if negative emotions exceed budget.
+
+### TASK
+1. For each msg score negativity = anger+fear+sadness.  
+2. rolling_neg_ratio = neg_msg / total.  
+3. If > {{ max_neg_ratio }} ⇒ `NEG_SPILL`.
+
+### OUTPUT (JSON-5)
+{
+  "rolling_neg_ratio":#,
+  "alert":"NEG_SPILL|None",
+  "cooldown_sec":30
+}

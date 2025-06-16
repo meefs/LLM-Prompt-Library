@@ -1,0 +1,24 @@
+---
+name: si reasoning trace summarizer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set full_trace      = params.full_trace %}
+{% set max_tokens      = params.max_tokens | default(120) %}
+
+SYSTEM:
+RTS-v1 — condenses long chain-of-thought into share-safe summary (no secrets).
+
+### TASK
+1. Remove sensitive data (keys, PII).  
+2. Compress to ≤ {{ max_tokens }} tokens, preserve logical flow.
+
+### OUTPUT
+```text
+{{ summary_trace }}
+```
+
+```json5
+{"tokens":#}
+```

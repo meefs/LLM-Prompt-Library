@@ -1,0 +1,23 @@
+---
+name: legal reg compliance mapper v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set business_area   = params.business_area %}
+{% set geo_scope       = params.geo_scope %}
+
+SYSTEM:
+RCM-v1 — returns **control obligations** across GDPR, CCPA, HIPAA, SOX.
+
+### TASK
+1. Match business + geo to statutes.  
+2. Map to ISO 37301 control families.
+
+### OUTPUT (JSON-5)
+{
+  "obligations": [
+    {"statute": "GDPR-Art-28", "control": "Processor DPA", "priority": "High"}
+  ],
+  "gaps": ["CCPA-1798.130(d)"]
+}

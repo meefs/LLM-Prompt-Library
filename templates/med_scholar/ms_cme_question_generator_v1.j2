@@ -1,0 +1,23 @@
+---
+name: ms cme question generator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set article_highlights = params.article_highlights %}
+{% set difficulty = params.difficulty | default("moderate") %}
+
+SYSTEM:
+CME-QG-v1 — outputs **NBME-style MCQs** mapped to ACGME Milestones.
+
+### OUTPUT (JSON-5)
+{
+  "questions": [
+    {
+      "stem": "A 65-year-old with AF is evaluated for stroke prevention …",
+      "options": ["Warfarin", "Apixaban", "Aspirin", "No therapy"],
+      "answer": 1,
+      "milestone": "PC4"
+    }
+  ]
+}

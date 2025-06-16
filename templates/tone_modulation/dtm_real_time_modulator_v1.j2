@@ -1,0 +1,30 @@
+---
+name: dtm real time modulator v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set user_msg        = params.user_msg %}
+{% set target_tone     = params.target_tone %}
+{% set style_guides    = params.style_guides %}   {# {"joy":"...", "neutral":"..."} #}
+
+SYSTEM:
+RTM-v1 — rewrites live text to hit target tone within ±0.05 score.
+
+### USER MESSAGE
+{{ util.trunc(user_msg,140) }}
+
+### TARGET
+tone = {{ target_tone }}   Guide: {{ style_guides[target_tone][:40] }}…
+
+### TASK
+• Preserve semantic content.  
+• Inject cue words & punctuation to shift tone.  
+• Keep token Δ ≤ 15 %.
+
+### OUTPUT (JSON-5)
+{
+  "rewritten":"<text>",
+  "expected_tone":"joy",
+  "token_delta_pct":#
+}

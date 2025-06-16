@@ -1,0 +1,22 @@
+---
+name: mp prompt style enforcer v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set candidate_prompt = params.candidate_prompt %}
+{% set style_guide      = params.style_guide %}
+
+SYSTEM:
+PSE-v1 — enforces org-wide **prompt style guide**.
+
+### TASK
+1. Detect violations (passive voice, nested bullets, 1st-person, etc.).  
+2. Auto-patch or mark TODO if major.
+
+### OUTPUT (JSON-5)
+{
+  "violations":[{"rule":"NO_PASSIVE","line":4}],
+  "patched_prompt":"<if auto-fixed>",
+  "status":"PASS|FAIL"
+}

@@ -1,0 +1,27 @@
+---
+name: vc postmoney cap taUle scenarios v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set pre_money_mn     = params.pre_money_mn %}
+{% set new_money_mn     = params.new_money_mn %}
+{% set pool_pct_post    = params.pool_pct_post | default(10) %}
+{% set rounds_ahead     = params.rounds_ahead | default([{"series":"B","raise_mn":20,"premoney_mn":80}]) %}
+
+SYSTEM:
+PM-CTS-v1 — projects **founder & investor dilution** across future rounds.
+
+### OUTPUT (JSON-5)
+{
+  "series_A_post":{
+     "founder_pct":#,
+     "investor_pct":#
+  },
+  "series_B_projection":{
+     "founder_pct":#,
+     "A_investor_pct":#,
+     "B_investor_pct":#
+  },
+  "option_pool_remaining_pct":#
+}

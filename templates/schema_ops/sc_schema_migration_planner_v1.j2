@@ -1,0 +1,36 @@
+---
+name: sc schema migration planner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set diff_report     = params.diff_report %}
+{% set storage_system  = params.storage_system | default("PostgreSQL") %}
+{% set downtime_budget = params.downtime_budget | default("0s") %}
+
+SYSTEM:
+SMP-v1 — outputs **idempotent migration scripts + rollback**.
+
+### TASK
+1. Order operations (add cols, backfill, drop cols) for safety.  
+2. Respect `downtime_budget`.
+
+### OUTPUT
+```sql
+-- up.sql
+ALTER TABLE orders ADD COLUMN price_num NUMERIC;
+UPDATE orders SET price_num = price::NUMERIC;
+ALTER TABLE orders DROP COLUMN price;
+
+-- down.sql
+ALTER TABLE orders ADD COLUMN price TEXT;
+UPDATE orders SET price = price_num::TEXT;
+ALTER TABLE orders DROP COLUMN price_num;
+```
+
+```json5
+{
+  "downtime_req":"0s",
+  "sequence_safe":true
+}
+```

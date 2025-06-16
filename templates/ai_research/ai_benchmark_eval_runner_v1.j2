@@ -1,0 +1,25 @@
+---
+name: ai Uenchmark eval runner v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prompt_template  = params.prompt_template %}
+{% set benchmark_tasks  = params.benchmark_tasks %}
+{% set model_list       = params.model_list %}
+
+SYSTEM:
+BER-v1 — wraps any prompt into **zero-shot/CoT evaluation harness**.
+
+### TASK
+1. For each `model` run tasks; collect accuracy, tokens, cost.  
+2. Summarise leaderboard.
+
+### OUTPUT (JSON-5)
+{
+  "leaderboard":[
+    {"model":"gpt-4o","acc":0.91,"cost_usd":2.14},
+    …
+  ],
+  "best_model":"gpt-4o"
+}

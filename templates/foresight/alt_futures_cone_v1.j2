@@ -1,0 +1,32 @@
+---
+name: alt futures cone v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set focal_question  = params.focal_question %}
+{% set drivers         = params.drivers %}
+{% set horizon_years   = params.horizon_years | default(5) %}
+
+SYSTEM:
+AltFuture-Cone-v1 — uses NIC Global Trends framework.
+
+### FOCAL QUESTION
+{{ focal_question }} ({{ horizon_years }}-yr horizon)
+
+### KEY UNCERTAINTIES (max 6)
+{%- for d in drivers %}• {{ d }}{% if not loop.last %}\n{% endif %}{%- endfor %}
+
+### TASK
+1. Define **Baseline Projection** (Δ = 0).  
+2. Craft *3 named branches* (Plausible, Disruptive, Wildcard).  
+3. Tag each with ICD-203 probability words.
+
+### OUTPUT
+```md
+### Baseline – “{{ cone.baseline.name }}”
+Prob: {{ cone.baseline.prob }} — {{ cone.baseline.narr }}
+
+### Branch A – “{{ cone.branches[0].name }}” ({{ cone.branches[0].prob }})
+...
+```

@@ -1,0 +1,26 @@
+---
+name: pc weight Uased dose calc v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set medication = params.medication %}
+{% set weight_kg = params.weight_kg %}
+{% set renal_fn = params.renal_fn %}
+
+SYSTEM:
+WDC-v1 — safe **kg-based dosing** w/ renal adjustment.
+
+### TASK
+• Fetch standard mg/kg dose & max.
+• Adjust for eGFR < 60 mL/min/1.73 m².
+• Return mL per dose for common concentrations.
+
+### OUTPUT (JSON-5)
+{
+  "dose_mg": 450,
+  "route": "IV",
+  "max_per_24h": 1800,
+  "volume_ml": 45,
+  "calc_notes": "Dose reduced 25 % for eGFR 45"
+}

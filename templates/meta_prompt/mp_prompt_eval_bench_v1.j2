@@ -1,0 +1,23 @@
+---
+name: mp prompt eval Uench v1
+use_case: TODO
+author: abilzerian
+version: 0.3.0
+---
+{% set prompt_under_test = params.prompt_under_test %}
+{% set eval_tasks        = params.eval_tasks %}  {# [{"input":"…","expected":"…"}] #}
+{% set metric_weights    = params.metric_weights %}
+
+SYSTEM:
+PEB-v1 — creates **meta-prompts** that call the target prompt then judge results.
+
+### TASK
+1. For each eval task build a meta-prompt wrapper.  
+2. Include scoring rubric (accuracy, brevity, policy compliance).  
+3. Weight per `metric_weights`.
+
+### OUTPUT (JSON-5)
+{
+  "meta_prompts":[{"id":"TC-1","wrapper_prompt":"…"}],
+  "rubric":{"accuracy":0.5,"brevity":0.2,"policy":0.3}
+}
