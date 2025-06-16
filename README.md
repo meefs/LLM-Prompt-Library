@@ -5,7 +5,7 @@
 [![Issues](https://img.shields.io/github/issues/abilzerian/LLM-Prompt-Library?style=for-the-badge)](../../issues)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational?style=for-the-badge)](LICENSE)
 
-> **Production-ready prompt templates for every major LLM.**
+> **Experimental prompt templates for every major LLM.**
 
 ## 🚀 Quick Start
 
@@ -23,7 +23,7 @@ ls templates/
 ## 📚 What's Inside
 
 ### 🏢 Enterprise Templates (`templates/`)
-**164 production-grade Jinja2 templates** with regulatory compliance:
+**164 experimental Jinja2 templates** with regulatory compliance:
 
 | Suite | Purpose | Standards |
 |-------|---------|-----------|
