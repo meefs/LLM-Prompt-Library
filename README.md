@@ -7,7 +7,9 @@
 
 > **Experimental prompt templates for every major LLM.**
 
-## 🚀 Quick Start
+A constantly evolving library of prompts & templates I've been tinkering with since Dec. 2022.
+
+## Quick Start
 
 ```bash
 git clone https://github.com/abilzerian/LLM-Prompt-Library.git
@@ -20,12 +22,12 @@ ls prompts/
 ls templates/
 ```
 
-## 📚 What's Inside
+## What's Inside
 
-### 🏢 Enterprise Templates (`templates/`)
-**164 experimental Jinja2 templates** with regulatory compliance:
+### Enterprise-style Templates (`templates/`)
+**164 experimental Jinja2 templates**:
 
-| Suite | Purpose | Standards |
+| Suite | Purpose | Standards Goal |
 |-------|---------|-----------|
 | **Finance** | Risk, capital, liquidity | Basel III/IV, FRTB, IFRS 9 |
 | **Private Equity** | LBO models, ESG tracking, waterfalls | ILPA DDQ 2024, IFRS 13 |
@@ -36,7 +38,7 @@ ls templates/
 | **AI Research** | Benchmarking, experiment design | Statistical rigor |
 | **Governance** | Policy compliance, risk assessment | SOX, COSO |
 
-### 🌍 Community Prompts (`prompts/`)
+### Community Prompts (`prompts/`)
 **60+ curated prompts** organized by domain:
 
 | Category | Count | Examples |
@@ -52,13 +54,14 @@ ls templates/
 | Sales | 1 | Email drafting |
 | Creative | 2 | Storytelling, dialogue |
 
-## 🏗️ Usage
+## Usage
 
 Copy any `.j2` template that fits your need, fill in the `params` values (or edit the inline `{{ placeholders }}`), then send the rendered prompt to your LLM.  
 No external Python libraries or template loaders are required.
+
 ⸻
 
-## 📊 Community & Stats
+## Community & Stats
 
 <p align="center">
   <picture>
